@@ -1,32 +1,113 @@
 ---
 title: |
   Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação 
-  do Processo de Redação
+  do Processo de Produção de Conteúdo
 subtitle: "Resumo Estendido"
 author: "Marcelo Ventura Freire"
 date: "13/11/2019"
 output: pdf_document
 ---
 
-
-Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação do Processo de Redação
-
 ## Resumo
 
-Apesar de não parecer óbvio, é possível utilizar na elaboração de material textual algumas técnicas consagradas de desenvolvimento de software.
+Algumas práticas consagradas de desenvolvimento de software podem ser utilizadas
+na produção de conteúdo, quer material textual quer material audiovisual, contudo
+as vantagens de utilizar essas práticas sistematicamente em ambiente profissional
+não são óbvias.
 
-Menos óbvias ainda, são as vantagens de utilizar essas práticas sistematicamente em ambiente profissional. 
-
-Apresentaremos algumas possibilidades a serem usadas em conjunto com recursos de software tais como o R, o R Markdown, o LaTeX, python, SQL, entre outros e com fontes de dados acessíveis através interface programável de aplicação (API), tais como, por exemplo, o sistema G Suite entre outros.
-
+Apresentaremos alguma práticas de programação e algumas possibilidades de seu 
+uso em conjunção com os recursos de software tais como o R, o R Markdown, o 
+LaTeX, Python, SQL, entre outros e com fontes de dados acessíveis através API, 
+tais como, por exemplo, o sistema *G Suite* entre outros.
 
 
 
 ## Introdução
 
+A produção de conteúdo é uma atividade recorrente em qualquer ambiente
+profissional, sob as formas mais diversas, tais como de relatórios gerenciais ou
+operacionais, de textos jornalísticos, de infográficos, de estudos técnicos, de
+animações, de *sites*, de peças publicitárias, de petições judiciais, de
+documentações etc.
+
+Uma forma mais apressada de abordar essa atividade prioriza o emprego de práticas
+que exijam menos elaboração conceitual, por permitirem um aprendizado inicial
+mais rápido e um avanço inicial mais rápido.
+
+Esse aprendizado inicial geralmente acaba sendo limitado, pela pressa, ao
+estritamente necessário para conseguir sair escrevendo, de modo que mesmo 
+recursos mais poderosos acabam sendo não utilizados
+
+No caso da produção textual, as ferramentas frequentemente empregadas para esse 
+fim são softwares como o Word ou PowerPoint, do Pacote Office, ou aplicativos na 
+nuvem, como o Google Docs ou Google Slides, do Pacote G Suite
+
+Em função da ênfase dada à celeridade em sair usando, mesmo o uso de ferramentas 
+já embutidas nas ferramentas acaba não ocorrendo por desconhecimento da
+ferramenta em mãos por parte do usuário.
+
+Resultado: quando o Word dá pau, 
+
+1) aquela figura tão importante pro relatório é substituído por aquele X 
+vermelho maldito, 
+2) ninguém acha mais o arquivo que continha a imagem, 
+3) ninguém tem mais uma versão anterior do documento, com a imagem sendo exibida 
+sem erro,
+3) tem que refazer a imagem, mas ninguém lembra dos detalhes de como ela foi 
+feita,
+4) quando tem que fazer um relatório praticamente idêntico mas para contexto e 
+dados diferentes, muito pouco pode ser aproveitado desse relatório para começar 
+o novo relatório
+
+---
+
+Na contramão dessa lógica, um investimento inicial mais vigoroso no domínio das 
+ferramentas de produção resultará em um retorno maior não a curto, mas sim a 
+médio e a longo prazos.  Em particular, quando já houver um domínio dos 
+rudimentos de programação, o esforço incremental será bastante menor por parte 
+do produtor de conteúdo.
+
+Empregando conceitos e práticas de programação, tais como:
+
+- programação literária (*literate programming*; mistura de texto e código), 
+- reprodutibilidade de pesquisa 
+  (*reproducible research*; não redija o documento, mas sim o meta-documento 
+  que gerará o documento)
+- "código é documentação"
+- "use sistema de controle de versionamento"
+- "confie à programação os processos repetitivos"
+- "reaproveite código que funciona"
+- uso de APIs
+
+o produtor de conteúdo conseguirá escalar a sua capacidade de produção, sem perda
+de precisão ou acurácia.
+
+
+
 ## Motivação
+
+Muito esforço humano pode ser melhor aproveitado se algumas boas práticas de 
+programação forem incorporadas ao repertório de trabalho de produção de conteúdo.
+
+Quem já sabe programar em R e já usa R Markdown tem uma oportunidade de alavancar
+no uso de uma linguagem de programação o aumento da qualidade e do volume de 
+produção de conteúdo.
+
+Quem não sabe programar, precisa escolher fazer esse investimento para conseguir
+usufruir desses frutos.
+
+
 
 ## Resultados
 
+Com esta apresentação, esperamos que o público entre em contato com algumas 
+possibilidade de alavancar, aprimorar e ampliar a sua produção utilizando 
+justamente as ferramentas do eco-sistema do R mais outras ferramentas de 
+programação, como o uso de APIs na internet.
+
+
+
 ## Conclusões
+
+Aprender a programar é o que há!
 
