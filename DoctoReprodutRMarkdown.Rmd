@@ -105,3 +105,19 @@ acessíveis via API
       facilitar a vida
 - reaproveitamento de código em outras circunstâncias
   
+
+
+
+- reproducible research
+- reproducible documents
+- <https://kbroman.org/datacarpentry_R_2018-06-04/04-rmarkdown.html>
+- litterate programming
+- <https://andrewbtran.github.io/NICAR/2017/reproducibility-rmarkdown/rmarkdown.html>
+
+- programação literária 
+  ([*literate programming*](https://en.wikipedia.org/wiki/Literate_programming);
+  mistura de texto e código), 
+- reprodutibilidade de pesquisa 
+  ([*reproducible research*](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research); 
+
+
