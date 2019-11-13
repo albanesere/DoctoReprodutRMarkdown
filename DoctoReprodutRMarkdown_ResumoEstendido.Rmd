@@ -1,0 +1,32 @@
+---
+title: |
+  Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação 
+  do Processo de Redação
+subtitle: "Resumo Estendido"
+author: "Marcelo Ventura Freire"
+date: "13/11/2019"
+output: pdf_document
+---
+
+
+Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação do Processo de Redação
+
+## Resumo
+
+Apesar de não parecer óbvio, é possível utilizar na elaboração de material textual algumas técnicas consagradas de desenvolvimento de software.
+
+Menos óbvias ainda, são as vantagens de utilizar essas práticas sistematicamente em ambiente profissional. 
+
+Apresentaremos algumas possibilidades a serem usadas em conjunto com recursos de software tais como o R, o R Markdown, o LaTeX, python, SQL, entre outros e com fontes de dados acessíveis através interface programável de aplicação (API), tais como, por exemplo, o sistema G Suite entre outros.
+
+
+
+
+## Introdução
+
+## Motivação
+
+## Resultados
+
+## Conclusões
+

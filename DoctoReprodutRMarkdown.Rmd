@@ -1,0 +1,107 @@
+---
+title: |
+  Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação do
+  Processo de Redação
+author: "Marcelo Ventura Freire"
+date: "30/11/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+Apresentaremos algumas possibilidades a serem usadas em conjunto com recursos de software tais como o R, o R Markdown, o LaTeX, python, SQL, entre outros e com fontes de dados acessíveis através interface programável de aplicação (API), tais como, por exemplo, o sistema G Suite (que é *cloud* e que inclui o *GMail*, o *Google Drive*, o *Google Sheets*, o *Google Docs* etc.) entre outros.
+
+
+
+- abordagem "tradicional"
+    - geração das partes do texto (texto, imagens, tabelas etc.) em softwares
+      diferentes e junção manual através do recurso de cópia e colagem do 
+      editor de texto (geralmente MS-Word ou Google Docs)
+    - vantagens
+        - rápido de aprender
+        - rápido de fazer
+    - desvantagens
+        - perda da origem das partes do texto
+        - perda do como as partes foram feitas
+        - se uma das imagens ou tabelas não for mais reconhecida internamente
+              - pelo MS-Word e não houver uma cópia em disco junto com o
+                .doc/.docx 
+              - para o Google Docs e não houver uma cópia no Google Drive
+              - então já era: o grande X vermelho
+    - bonus: desvantagens adicionais
+        - copiar-colar conteúdos não retangulares do navegador de internet
+        - 
+
+
+
+- alguns princípio de programação que podem ajudar
+    - código é documentação
+        - o código que gerou a imagem ou tabela *já é* documentação: de onde
+          vieram os dados, como foi calculado, quais opções de visualização 
+          foram usadas no gráfico ou tabela
+        - o código que buscou a informação online *já é* documentação: de onde 
+          os dados foram raspados, como foi processado, quais opções de
+          visualização foram usadas
+    - use sistema de controle de versionamento
+        - e.g., git
+        - permite rastrear a versão documento
+            - sabe o "putz, não podiam ter jogado fora aquele gráfico" e o "é,
+              ninguém mais consegue achar o arquivo de imagem e nem cópia da
+              versão anterior"?
+            - pois é, isso não acontece com um sistema de controle de versão
+            - é possível dar um *rollback* pra qualquer versão de interesse
+        - bônus: permite redação colaborativa do documento
+            - Google Docs também consegue
+    - confie à programação os processos repetitivos
+        - não use o loop copie-cole-altere-copie-cole-altere-...
+            - você **vai** errar em algum ponto
+            - se você precisar refazer, vai errar em *outro* ponto, de modo que
+              nunca vai ficar igual à primeira versão
+        - use um chunk que obtenha, processe e formate os dados
+    - reaproveite código que funciona
+        - o chunk que funciona em um documento pode servir de início e ser
+          adaptado para uma finalidade próxima em outro documento
+
+
+
+
+- vantagens
+    - R Makrdown consegue gerar saídas em
+        - .pdf (texto ou slides)
+        - .html (texto, slides ou dashboard)
+        - .ppt/.pptx
+        - .doc/.docx
+
+
+- dados na internet
+    - páginas estáticas
+    - páginas dinâmicas
+        - geradas por API
+            - url de uma página gerada por API
+            
+            
+pegar a imagem de:
+- <https://uspdigital.usp.br/jupiterweb/jupDisciplinaBusca?tipo=D>
+
+analisar a sintaxe de
+- <https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=ACH0021>
+- <https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=86&codcur=86450&codhab=202&tipo=N>
+
+
+
+
+
+acessíveis via API
+
+- técnicas de raspagem de dados
+    - uso de API pra pedir e obter dados em forma JSON ou XML
+        - packages 
+- interface com sistemas cloud
+    - até tem o sistema de API, mas alguns packages encapsulam a sintaxe,pra 
+      facilitar a vida
+- reaproveitamento de código em outras circunstâncias
+  
