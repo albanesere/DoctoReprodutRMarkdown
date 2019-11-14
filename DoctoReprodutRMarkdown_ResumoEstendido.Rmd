@@ -16,43 +16,41 @@ as vantagens de utilizar essas práticas sistematicamente em ambiente profission
 não são óbvias.
 
 Apresentaremos alguma práticas de programação e algumas possibilidades de seu 
-uso em conjunção com os recursos de software tais como o R, o R Markdown, o 
-LaTeX, Python, SQL, entre outros e com fontes de dados acessíveis através API, 
-tais como, por exemplo, o sistema *G Suite* entre outros.
+uso em conjunção com os recursos de software tais como R, R Markdown, LaTeX, 
+Python, SQL, entre outros e com fontes de dados acessíveis através API, tais 
+como o sistema *G Suite* entre outros.
 
 
 
 ## Introdução
 
-A produção de conteúdo é uma atividade recorrente em qualquer ambiente
-profissional, sob as formas mais diversas, tais como de relatórios gerenciais ou
-operacionais, de textos jornalísticos, de infográficos, de estudos técnicos, de
-animações, de *sites*, de peças publicitárias, de petições judiciais, de
-documentações etc.
+A produção de conteúdo é uma atividade recorrente em qualquer ambiente 
+profissional, sob as formas mais diversas, tais como relatórios gerenciais ou
+operacionais, textos jornalísticos, infográficos, estudos técnicos, animações, 
+*sites*, peças publicitárias, petições judiciais, documentações entre outros.
 
 Uma forma mais apressada de abordar essa atividade prioriza o emprego de práticas
-que exijam menos elaboração conceitual, por permitirem um aprendizado inicial
-mais rápido e um avanço inicial mais rápido.
+que exijam menos elaboração conceitual, por permitirem um aprendizado e um avanço 
+iniciais mais rápidos.
 
 Esse aprendizado inicial geralmente acaba sendo limitado, pela pressa, ao
-estritamente necessário para conseguir sair escrevendo, de modo que mesmo 
-recursos mais poderosos acabam sendo não utilizados
+estritamente necessário para conseguir começar a escrever no menor tempo 
+possível, de modo que mesmo recursos mais interessantes das ferramentas acabam 
+não sendo aprendido e, com isso, utilizados.
 
 No caso da produção textual, as ferramentas frequentemente empregadas para esse 
 fim são softwares como o Word ou PowerPoint, do Pacote Office, ou aplicativos na 
-nuvem, como o Google Docs ou Google Slides, do Pacote G Suite
+nuvem, como o Google Docs ou Google Slides, do Pacote G Suite.
 
-Em função da ênfase dada à celeridade em sair usando, mesmo o uso de ferramentas 
-já embutidas nas ferramentas acaba não ocorrendo por desconhecimento da
-ferramenta em mãos por parte do usuário.
+Nesse cenário, quando as ferramentas eletrônicas dão erro, o que observamos 
+tipicamente é:
 
-Resultado: quando o Word dá pau, 
-
+1) o Word "dá pau"
 1) aquela figura tão importante pro relatório é substituído por aquele X 
 vermelho maldito, 
 2) ninguém acha mais o arquivo que continha a imagem, 
-3) ninguém tem mais uma versão anterior do documento, com a imagem sendo exibida 
-sem erro,
+3) ninguém tem mais uma versão anterior do documento, na qual a imagem ainda seja
+exibida sem erro,
 3) tem que refazer a imagem, mas ninguém lembra dos detalhes de como ela foi 
 feita,
 4) quando tem que fazer um relatório praticamente idêntico mas para contexto e 
@@ -67,20 +65,29 @@ médio e a longo prazos.  Em particular, quando já houver um domínio dos
 rudimentos de programação, o esforço incremental será bastante menor por parte 
 do produtor de conteúdo.
 
-Empregando conceitos e práticas de programação, tais como:
+Empregando alguns conceitos e práticas de programação, tais como:
 
-- programação literária (*literate programming*; mistura de texto e código), 
-- reprodutibilidade de pesquisa 
-  (*reproducible research*; não redija o documento, mas sim o meta-documento 
-  que gerará o documento)
+- programação literária (*literate programming*), 
+- reprodutibilidade de pesquisa (*reproducible research*)
 - "código é documentação"
 - "use sistema de controle de versionamento"
 - "confie à programação os processos repetitivos"
 - "reaproveite código que funciona"
-- uso de APIs
+
+e ferramentas tais como:
+
+- as linguagens de programação *R*, *Python* e *SQL*,
+- a linguagem de marcação *Markdown* e sua interface *R Markdown*,
+- o ambiente de desenvolvimento integrado *RStudio*,
+- o sistema de preparação de documentos *LaTeX* e
+- fontes de dados acessíveis através de sistema de API, tais como o sistema 
+*G Suite* entre outros,
 
 o produtor de conteúdo conseguirá escalar a sua capacidade de produção, sem perda
 de precisão ou acurácia.
+
+Não pretendemos e nem teremos como abordar em profundidade cada uma dessas 
+ferramentas, mas sim somente ilustrar as possibilidades de utilização.
 
 
 
@@ -105,9 +112,12 @@ possibilidade de alavancar, aprimorar e ampliar a sua produção utilizando
 justamente as ferramentas do eco-sistema do R mais outras ferramentas de 
 programação, como o uso de APIs na internet.
 
+Com isso, esperamos aumentar a adoção desse conjunto de conceitos, técnicas e 
+ferramentas pela comunidade de usuários de R
+
 
 
 ## Conclusões
 
-Aprender a programar é o que há!
+Não se aplica
 
