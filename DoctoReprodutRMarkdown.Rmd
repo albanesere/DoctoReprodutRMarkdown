@@ -121,3 +121,10 @@ acessíveis via API
   ([*reproducible research*](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research); 
 
 
+- programação literária (*literate programming*; mistura de texto e código), 
+- reprodutibilidade de pesquisa 
+  (*reproducible research*; não redija o documento, mas sim o meta-documento 
+  que gerará o documento)
+
+
+
