@@ -1,42 +1,102 @@
 ---
 title: |
-  Documentos Reprodutíveis em R Markdown como Forma de Autodocumentação do
-  Processo de Redação
+  Documentos Reprodutíveis em R Markdown 
+subtitle: |
+  como Forma de Autodocumentação do
+  Processo de Produção de Conteúdo
 author: "Marcelo Ventura Freire"
 date: "30/11/2019"
-output: ioslides_presentation
+output: 
+  ioslides_presentation: 
+    incremental: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## O que queremos fazer?
+
+Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade de produção, sem perda de precisão ou acurácia e com ganho de segurança.
 
 
-Apresentaremos algumas possibilidades a serem usadas em conjunto com recursos de software tais como o R, o R Markdown, o LaTeX, python, SQL, entre outros e com fontes de dados acessíveis através interface programável de aplicação (API), tais como, por exemplo, o sistema G Suite (que é *cloud* e que inclui o *GMail*, o *Google Drive*, o *Google Sheets*, o *Google Docs* etc.) entre outros.
+## Outline
+
+Nesta palestra, vamos apresentar 
+
+- um conjunto de princípios, boas práticas e recursos computacionais 
+- alguns mais e outros menos manjados quando considerados separadamente, mas que 
+- não são usados conjuntamente com a frequência e a orientação que mereciam
+- com isso, esta palestra pode ficar trivial para alguns contudo útil para outros
+    - meus pedidos de perdão antecipados para o primeiro grupo
+    
+
+## Quais princípios?
+
+Princípios que consideraremos
+
+- programação literária (*literate programming*), 
+- reprodutibilidade de pesquisa (*reproducible research*)
+
+## Quais boas práticas?
+
+Boas práticas de programação que consideraremos
+
+- "código é documentação"
+- "use sistema de controle de versionamento"
+- "confie à programação os processos repetitivos"
+- "reaproveite código que funciona"
+
+## Quais ferramentas de computação?
+
+Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresentação*
+
+- a linguagem de programação *R*
+- a linguagem de marcação *Markdown* 
+- o formato de arquivo e interface *R Markdown*
+- o ambiente de desenvolvimento integrado *RStudio*
+- o sistema de interface programável de aplicativo *API*
+- os sistemas *G Suite* e JupiterWeb acessíveis através de sistema de API
 
 
+----
 
-- abordagem "tradicional"
-    - geração das partes do texto (texto, imagens, tabelas etc.) em softwares
-      diferentes e junção manual através do recurso de cópia e colagem do 
-      editor de texto (geralmente MS-Word ou Google Docs)
-    - vantagens
-        - rápido de aprender
-        - rápido de fazer
-    - desvantagens
-        - perda da origem das partes do texto
-        - perda do como as partes foram feitas
-        - se uma das imagens ou tabelas não for mais reconhecida internamente
-              - pelo MS-Word e não houver uma cópia em disco junto com o
-                .doc/.docx 
-              - para o Google Docs e não houver uma cópia no Google Drive
-              - então já era: o grande X vermelho
-    - bonus: desvantagens adicionais
-        - copiar-colar conteúdos não retangulares do navegador de internet
-        - 
+**Ferramentas que também poderíamos considerar pelo mesmo custo mental se você já as dominar, mas que não daria tempo nem espaço de abordarmos porque já fomos insanamente ambiciosos de enfiar um monte de coisas na apresentação**
+
+Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos ter usado também 
+
+- as linguagens de programação *Python* e *SQL*
+    - junto com o *Python*, vem quaisquer programas com interface via biblioteca *Python*
+- o sistema de preparação de documentos *LaTeX*
+- o pacote *Shiny* para montar web apps e dashboards
+- outras fontes de dados acessíveis/raspáveis através de sistema de API, tais como o Facebook, Twitter, Instagram, Telegram, WhatsApp etc.
 
 
+## Abordagem "tradicional"
+
+- geração das diferentes partes do conteúdo em softwares diferentes
+    - texto
+    - imagens
+    - tabelas
+    - etc.
+- junção manual através do recurso de cópia e colagem do editor de texto
+    - geralmente MS-Word ou Google Docs
+
+
+## Abordagem "tradicional"
+
+- vantagens
+    - rápido de aprender
+    - rápido de fazer
+- desvantagens
+    - perda da origem das partes do texto
+    - perda do como as partes foram feitas
+    - se uma das imagens ou tabelas não for mais reconhecida internamente
+        - pelo MS-Word e não houver uma cópia em disco junto com o .doc/.docx 
+        - para o Google Docs e não houver uma cópia no Google Drive
+        - então já era: o grande X vermelho
+
+---
 
 - alguns princípio de programação que podem ajudar
     - código é documentação
