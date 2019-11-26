@@ -1,22 +1,20 @@
 ---
-title: |
-  Documentos Reprodutíveis em R Markdown 
-subtitle: |
-  como Forma de Autodocumentação do
-  Processo de Produção de Conteúdo
+title: "Documentos Reprodutíveis em R Markdown"
+subtitle: "como Forma de Autodocumentação do Processo de Produção de Conteúdo"
 author: "Marcelo Ventura Freire"
 date: "30/11/2019"
 output: 
   ioslides_presentation: 
     incremental: yes
     transition: faster
+    smart: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## O que queremos fazer?
+## O que queremos fazer? {.flexbox .vcenter}
 
 Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade de produção, sem perda de precisão ou acurácia e com ganho de segurança.
 
@@ -25,52 +23,63 @@ Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacida
 
 Nesta palestra, vamos apresentar 
 
+- a forma "tradicional" de produzir conteúdo
 - um conjunto de princípios, boas práticas e recursos computacionais 
-- alguns mais e outros menos manjados quando considerados separadamente, mas que 
-- não são usados conjuntamente com a frequência e a orientação que mereciam
-- com isso, esta palestra pode ficar trivial para alguns contudo útil para outros
-    - meus pedidos de perdão antecipados para o primeiro grupo
-    
+    - alguns mais e outros menos manjados quando considerados separadamente, mas que 
+    - não são usados conjuntamente com a frequência e a orientação que mereciam
+- com isso, esta palestra pode ficar trivial para alguns e útil para outros
+
 
 ## Quais princípios?
 
 Princípios que consideraremos
 
-- programação literária (*literate programming*), 
-- reprodutibilidade de pesquisa (*reproducible research*)
+- Programação Literária (*Literate Programming*), 
+- Reprodutibilidade de Pesquisa (*Reproducible Research*)
 
 ## Quais boas práticas?
 
 Boas práticas de programação que consideraremos
 
-- "código é documentação"
-- "use sistema de controle de versionamento"
-- "confie à programação os processos repetitivos"
-- "reaproveite código que funciona"
+- "Código é documentação"
+- "Use sistema de controle de versão"
+- "Confie à programação os processos repetitivos"
+- "Reaproveite código que funciona"
 
 ## Quais ferramentas de computação?
 
 Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresentação*
 
-- a linguagem de programação *R*
-- a linguagem de marcação *Markdown* 
-- o formato de arquivo e interface *R Markdown*
-- o ambiente de desenvolvimento integrado *RStudio*
-- o sistema de interface programável de aplicativo *API*
-- os sistemas *G Suite* e JupiterWeb acessíveis através de sistema de API
+- Linguagem de Programação *R*
+- Linguagem de Marcação *Markdown* 
+- Formato de Arquivo e Interface *R Markdown*
+- Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
+- Sistema de interface programável de aplicativo *API*
+- Sistema JupiterWeb acessíveis através de sistema de API
+    - porém usando só funcionalidades não exijam autenticação
 
-----
+---
+
+<font size=6>
 
 **Ferramentas que também poderíamos considerar pelo mesmo custo mental se você já as dominar, mas que não daria tempo nem espaço de abordarmos porque já fomos insanamente ambiciosos de enfiar um monte de coisas na apresentação**
+
+</font>
+
+<font size=4>
 
 Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos ter usado também 
 
 - as linguagens de programação *Python* e *SQL*
-    - junto com o *Python*, vem quaisquer programas com interface via biblioteca *Python*
+    - junto com o *Python*, vêm os programas acessíveis via biblioteca *Python*
+        - manipulação de imagem, IoT, NLP, raspberry pi, ARCGIS
 - o sistema de preparação de documentos *LaTeX*
 - o pacote *Shiny* para montar web apps e dashboards
-- outras fontes de dados acessíveis/raspáveis através de sistema de API, tais como o Facebook, Twitter, Instagram, Telegram, WhatsApp etc.
+- outras fontes de dados acessíveis/raspáveis através de sistema de API
+    - e.g., os sistemas *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
+        - todos esses exigem autenticação, que pode ser realizada com o pacote `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
 
+</font>
 
 ## Abordagem "tradicional"
 
@@ -83,47 +92,63 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
     - geralmente MS-Word ou Google Docs
 
 
----
+## Abordagem "tradicional"
 
 - vantagens
     - rápido de aprender
     - rápido de fazer
 
 
----
+## Abordagem "tradicional"
 
 - desvantagens
     - perda da origem das partes do conteúdo
     - perda do *como* as partes foram feitas
     - se uma das imagens ou tabelas não for mais reconhecida internamente
-        - pelo MS-Word e não houver uma cópia em disco junto com o .doc/.docx 
-        - para o Google Docs e não houver uma cópia no Google Drive
+        - no MS-Word, se não houver uma cópia em disco junto com o .doc/.docx 
+        - no Google Docs, se não houver uma cópia no Google Drive
         - então já era: o grande X vermelho from hell!
 
-# Senta que lá vem a história
+## Então Já Era! {.flexbox .vcenter}
+
+O grande X vermelho from hell!
+
+![Big, Bad, Red X](./redX.jpeg)
+
+# Princípios, Boas Práticas e Ferramentas
 
 # Princípios
 
-## Programação literária (*literate programming*)
-## Reprodutibilidade de pesquisa (*reproducible research*)
+## Programação Literária | *Literate Programming*
+
+## Reprodutibilidade de Pesquisa | *Reproducible Research*
 
 # Boas práticas
 
-## "código é documentação"
+## "Código é documentação"
 
 - o código que gerou a imagem ou tabela *já é* documentação
     - de onde vieram os dados, 
     - como foi calculado, 
     - quais opções de visualização foram usadas no gráfico ou tabela
 
-## "código é documentação"
+## "Código é documentação"
 
 - o código que buscou a informação online *já é* documentação
     - de onde os dados foram raspados, 
     - como foi processado
     - quais opções de visualização foram usadas
 
-## "código é documentação"
+
+
+## "Use sistema de controle de versão"
+
+É o "Use protetor solar" dos programadores
+
+Sistema de controle de versão
+
+
+## "Use sistema de controle de versão"
 
 - e.g., git
     - <https://git-scm.com/video/what-is-version-control>
@@ -132,20 +157,22 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
     - repo local e remoto
     - commit e branch
 
-## "código é documentação"
+## "Use sistema de controle de versão"
 
 - permite rastrear a versão documento
     - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o "*é, ninguém mais consegue achar o arquivo de imagem e nem cópia da versão anterior*"?
     - pois é, isso não acontece com um sistema de controle de versão
     - é possível dar um *rollback* pra qualquer versão de interesse
 
-## "código é documentação"
+## "Use sistema de controle de versão"
 
 - bônus: permite redação colaborativa (não simultânea) do documento
     - Google Docs também permite redação colaborativa, só que simultânea
 - bônus: permite documentar quais alterações foram feitas
 
-## "confie à programação os processos repetitivos"
+
+
+## "Confie à programação os processos repetitivos"
 
 - não use o loop copie-cole-altere-copie-cole-altere-...
     - você **vai** errar em algum ponto
@@ -153,7 +180,7 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
       nunca vai ficar igual à primeira versão
 - use um chunk que obtenha, processe e formate os dados
 
-## "reaproveite código que funciona"
+## "Reaproveite código que funciona"
 
 - o chunk que funciona em um documento pode servir de início e ser adaptado para uma finalidade próxima em outro documento
   
@@ -161,25 +188,47 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
 
 # Ferramentas
 
-## a linguagem de programação *R*
-## a linguagem de marcação *Markdown* 
+## A linguagem de programação *R* {.flexbox .vcenter}
 
-- implementa programação literária
-- permite incluir 
+![<font size=1>I coração R exclamation mark</font>](./IheartR1.png)
+
+<font size=1>
+Chupinhado desavergonhadamente de 
+<https://blog.revolutionanalytics.com/2010/11/acm-data-mining-camp-1.html>
+</font>
+
+
+
+## Linguagem de Marcação *Markdown* 
+
+- uma linguagem de marcação desvincula conteúdo e forma do texto
+    - ao invés de formatar diretamente o texto e ficar com uma imagem da versão final do texto, você escreve o seu conteúdo sem se preocupar com formatação e aí, só no fim, você gera uma versão formatada do texto
+- a linguegem *Markdown* é processada pelo aplicativo *pandoc*, que implementa programação literária
+
+## Linguagem de Marcação *Markdown* 
+
+- o *Markdown* permite incluir no documento
     - texto
     - imagens
     - tabelas
     - pedaços de código (*chunks*) de várias linguagens
-- consegue gerar saídas em
+- o *pandoc* consegue gerar saídas em
     - .pdf (texto ou slides)
     - .html (texto, slides ou dashboard)
     - .ppt/.pptx
     - .doc/.docx
+- <font size=1>*markdown* é um trocadilho com *markup*, como em *hyper text markup language* (`html`)</font>
 
-## o formato de arquivo e interface *R Markdown*
-## o ambiente de desenvolvimento integrado *RStudio*
-## o sistema de interface programável de aplicativo *API*
-## os sistemas *G Suite* e JupiterWeb acessíveis através de sistema de API
+
+## Formato de Arquivo e Interface *R Markdown*
+
+## Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
+
+![<font size=1>Nossa IDE amada</font>](rstudio2.png)
+
+## Sistema de Interface Programável de Aplicativo *API*
+
+## Sistema JupiterWeb acessíveis através de sistema de *API*
 
 
 ---
