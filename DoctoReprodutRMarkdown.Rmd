@@ -191,6 +191,8 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
         - geradas por API
             - url de uma página gerada por API
             
+
+
             
 pegar a imagem de:
 - <https://uspdigital.usp.br/jupiterweb/jupDisciplinaBusca?tipo=D>
