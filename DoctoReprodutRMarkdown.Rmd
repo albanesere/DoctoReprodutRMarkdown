@@ -9,6 +9,7 @@ date: "30/11/2019"
 output: 
   ioslides_presentation: 
     incremental: yes
+    transition: faster
 ---
 
 ```{r setup, include=FALSE}
@@ -58,7 +59,6 @@ Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresenta
 - o sistema de interface programável de aplicativo *API*
 - os sistemas *G Suite* e JupiterWeb acessíveis através de sistema de API
 
-
 ----
 
 **Ferramentas que também poderíamos considerar pelo mesmo custo mental se você já as dominar, mas que não daria tempo nem espaço de abordarmos porque já fomos insanamente ambiciosos de enfiar um monte de coisas na apresentação**
@@ -83,58 +83,106 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
     - geralmente MS-Word ou Google Docs
 
 
-## Abordagem "tradicional"
+---
 
 - vantagens
     - rápido de aprender
     - rápido de fazer
-- desvantagens
-    - perda da origem das partes do texto
-    - perda do como as partes foram feitas
-    - se uma das imagens ou tabelas não for mais reconhecida internamente
-        - pelo MS-Word e não houver uma cópia em disco junto com o .doc/.docx 
-        - para o Google Docs e não houver uma cópia no Google Drive
-        - então já era: o grande X vermelho
+
 
 ---
 
-- alguns princípio de programação que podem ajudar
-    - código é documentação
-        - o código que gerou a imagem ou tabela *já é* documentação: de onde
-          vieram os dados, como foi calculado, quais opções de visualização 
-          foram usadas no gráfico ou tabela
-        - o código que buscou a informação online *já é* documentação: de onde 
-          os dados foram raspados, como foi processado, quais opções de
-          visualização foram usadas
-    - use sistema de controle de versionamento
-        - e.g., git
-        - permite rastrear a versão documento
-            - sabe o "putz, não podiam ter jogado fora aquele gráfico" e o "é,
-              ninguém mais consegue achar o arquivo de imagem e nem cópia da
-              versão anterior"?
-            - pois é, isso não acontece com um sistema de controle de versão
-            - é possível dar um *rollback* pra qualquer versão de interesse
-        - bônus: permite redação colaborativa do documento
-            - Google Docs também consegue
-    - confie à programação os processos repetitivos
-        - não use o loop copie-cole-altere-copie-cole-altere-...
-            - você **vai** errar em algum ponto
-            - se você precisar refazer, vai errar em *outro* ponto, de modo que
-              nunca vai ficar igual à primeira versão
-        - use um chunk que obtenha, processe e formate os dados
-    - reaproveite código que funciona
-        - o chunk que funciona em um documento pode servir de início e ser
-          adaptado para uma finalidade próxima em outro documento
+- desvantagens
+    - perda da origem das partes do conteúdo
+    - perda do *como* as partes foram feitas
+    - se uma das imagens ou tabelas não for mais reconhecida internamente
+        - pelo MS-Word e não houver uma cópia em disco junto com o .doc/.docx 
+        - para o Google Docs e não houver uma cópia no Google Drive
+        - então já era: o grande X vermelho from hell!
+
+# Senta que lá vem a história
+
+# Princípios
+
+## Programação literária (*literate programming*)
+## Reprodutibilidade de pesquisa (*reproducible research*)
+
+# Boas práticas
+
+## "código é documentação"
+
+- o código que gerou a imagem ou tabela *já é* documentação
+    - de onde vieram os dados, 
+    - como foi calculado, 
+    - quais opções de visualização foram usadas no gráfico ou tabela
+
+## "código é documentação"
+
+- o código que buscou a informação online *já é* documentação
+    - de onde os dados foram raspados, 
+    - como foi processado
+    - quais opções de visualização foram usadas
+
+## "código é documentação"
+
+- e.g., git
+    - <https://git-scm.com/video/what-is-version-control>
+    - <https://git-scm.com/video/what-is-git>
+    - <https://git-scm.com/book/en/v2>
+    - repo local e remoto
+    - commit e branch
+
+## "código é documentação"
+
+- permite rastrear a versão documento
+    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o "*é, ninguém mais consegue achar o arquivo de imagem e nem cópia da versão anterior*"?
+    - pois é, isso não acontece com um sistema de controle de versão
+    - é possível dar um *rollback* pra qualquer versão de interesse
+
+## "código é documentação"
+
+- bônus: permite redação colaborativa (não simultânea) do documento
+    - Google Docs também permite redação colaborativa, só que simultânea
+- bônus: permite documentar quais alterações foram feitas
+
+## "confie à programação os processos repetitivos"
+
+- não use o loop copie-cole-altere-copie-cole-altere-...
+    - você **vai** errar em algum ponto
+    - se você precisar refazer, vai errar em *outro* ponto, de modo que
+      nunca vai ficar igual à primeira versão
+- use um chunk que obtenha, processe e formate os dados
+
+## "reaproveite código que funciona"
+
+- o chunk que funciona em um documento pode servir de início e ser adaptado para uma finalidade próxima em outro documento
+  
 
 
+# Ferramentas
+
+## a linguagem de programação *R*
+## a linguagem de marcação *Markdown* 
+
+- implementa programação literária
+- permite incluir 
+    - texto
+    - imagens
+    - tabelas
+    - pedaços de código (*chunks*) de várias linguagens
+- consegue gerar saídas em
+    - .pdf (texto ou slides)
+    - .html (texto, slides ou dashboard)
+    - .ppt/.pptx
+    - .doc/.docx
+
+## o formato de arquivo e interface *R Markdown*
+## o ambiente de desenvolvimento integrado *RStudio*
+## o sistema de interface programável de aplicativo *API*
+## os sistemas *G Suite* e JupiterWeb acessíveis através de sistema de API
 
 
-- vantagens
-    - R Makrdown consegue gerar saídas em
-        - .pdf (texto ou slides)
-        - .html (texto, slides ou dashboard)
-        - .ppt/.pptx
-        - .doc/.docx
+---
 
 
 - dados na internet
