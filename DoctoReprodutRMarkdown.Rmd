@@ -16,7 +16,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## O que queremos fazer? {.flexbox .vcenter}
 
-Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade de produção, sem perda de precisão ou acurácia e com ganho de segurança.
+Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade 
+de produção, sem perda de precisão ou acurácia e com ganho de segurança.
 
 
 ## Outline
@@ -25,8 +26,11 @@ Nesta palestra, vamos apresentar
 
 - a forma "tradicional" de produzir conteúdo
 - um conjunto de princípios, boas práticas e recursos computacionais 
-    - alguns mais e outros menos manjados quando considerados separadamente, mas que 
+    - alguns mais e outros menos manjados quando considerados separadamente, 
+      **mas** que
     - não são usados conjuntamente com a frequência e a orientação que mereciam
+- uma forma de utilizar os itens acima para trabalhar de forma melhor que a 
+  "tradicional"
 - com isso, esta palestra pode ficar trivial para alguns e útil para outros
 
 
@@ -35,7 +39,20 @@ Nesta palestra, vamos apresentar
 Princípios que consideraremos
 
 - Programação Literária (*Literate Programming*), 
+
+
+
 - Reprodutibilidade de Pesquisa (*Reproducible Research*)
+
+"The term *reproducible research* refers to the idea that the ultimate product 
+of academic research is the paper along with the laboratory notebooks and full 
+computational environment used to produce the results in the paper such as the 
+code, data, etc. that can be used to reproduce the results and create new work 
+based on the research."
+
+- Wikipedia
+
+
 
 ## Quais boas práticas?
 
@@ -68,7 +85,8 @@ Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresenta
 
 <font size=4>
 
-Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos ter usado também 
+Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos ter 
+usado também 
 
 - as linguagens de programação *Python* e *SQL*
     - junto com o *Python*, vêm os programas acessíveis via biblioteca *Python*
@@ -76,8 +94,10 @@ Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos
 - o sistema de preparação de documentos *LaTeX*
 - o pacote *Shiny* para montar web apps e dashboards
 - outras fontes de dados acessíveis/raspáveis através de sistema de API
-    - e.g., os sistemas *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
-        - todos esses exigem autenticação, que pode ser realizada com o pacote `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
+    - e.g., os sistemas *G Suite*, Facebook, Twitter, Instagram, Telegram, 
+      WhatsApp
+        - todos esses exigem autenticação, que pode ser realizada com o pacote 
+          `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
 
 </font>
 
@@ -160,7 +180,8 @@ Sistema de controle de versão
 ## "Use sistema de controle de versão"
 
 - permite rastrear a versão documento
-    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o "*é, ninguém mais consegue achar o arquivo de imagem e nem cópia da versão anterior*"?
+    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o 
+      "*é, ninguém mais consegue achar o arquivo de imagem e nem cópia da versão anterior*"?
     - pois é, isso não acontece com um sistema de controle de versão
     - é possível dar um *rollback* pra qualquer versão de interesse
 
@@ -182,7 +203,8 @@ Sistema de controle de versão
 
 ## "Reaproveite código que funciona"
 
-- o chunk que funciona em um documento pode servir de início e ser adaptado para uma finalidade próxima em outro documento
+- o chunk que funciona em um documento pode servir de início e ser adaptado para 
+  uma finalidade próxima em outro documento
   
 
 
@@ -202,8 +224,11 @@ Chupinhado desavergonhadamente de
 ## Linguagem de Marcação *Markdown* 
 
 - uma linguagem de marcação desvincula conteúdo e forma do texto
-    - ao invés de formatar diretamente o texto e ficar com uma imagem da versão final do texto, você escreve o seu conteúdo sem se preocupar com formatação e aí, só no fim, você gera uma versão formatada do texto
-- a linguegem *Markdown* é processada pelo aplicativo *pandoc*, que implementa programação literária
+    - ao invés de formatar diretamente o texto e ficar com uma imagem da versão 
+      final do texto, você escreve o seu conteúdo sem se preocupar com formatação 
+      e aí, só no fim, você gera uma versão formatada do texto
+- a linguegem *Markdown* é processada pelo aplicativo *pandoc*, que implementa 
+  programação literária
 
 ## Linguagem de Marcação *Markdown* 
 
@@ -217,7 +242,8 @@ Chupinhado desavergonhadamente de
     - .html (texto, slides ou dashboard)
     - .ppt/.pptx
     - .doc/.docx
-- <font size=1>*markdown* é um trocadilho com *markup*, como em *hyper text markup language* (`html`)</font>
+- <font size=1>*markdown* é um trocadilho com *markup*, como em 
+  *hyper text markup language* (`html`)</font>
 
 
 ## Formato de Arquivo e Interface *R Markdown*
