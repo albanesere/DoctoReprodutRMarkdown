@@ -131,9 +131,17 @@ which a computer program is given an explanation of its logic in a natural
 language, such as English, interspersed with snippets of macros and traditional 
 source code, from which compilable source code can be generated."
 
-- Wikipedia \ \ \  XD
+- Fonte: [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ \ \  
+  `r emo::ji("laughing")`
 - Donald Knuth == inventor do TeX e do LaTeX
-- documento == descriçãao do documento + pedaços de texto + pedaços de código
+- documento == descrição do documento + pedaços de texto + pedaços de código
+- <font size=1>Caveat emptor: Não faça citações à Wikipedia no seu trabalho de
+faculdade, monografia, disertação ou tese!  Apesar de muitas páginas terem
+informação tecnicamente muito acurada, ainda assim há páginas muito ruins e
+imprecisas.  Se o leitor não souber diferenciar, pode levar gato por lebre fácil
+fácil.  Aqui (i) eu estou fazendo de zueira para uma apresentação, (ii) eu já
+conheço as definições, sabia avaliar se a definição deles estava OK e só estava
+com preguiça de redigir com meus próprios termos.</font>
 
 
 ## Programação Literária | *Literate Programming*
@@ -143,8 +151,10 @@ literate source file: one suitable for further compilation or execution by a
 computer, the 'tangled' code, and another for viewing as formatted documentation, 
 which is said to be 'woven' from the literate source."
 
-- Wikipedia \ \ \  XD
-- não redija o documento, mas sim o meta-documento que gerará o documento
+- Fonte: [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ \ \  
+  `r emo::ji("laughing")`
+- moral da história: não redija o documento, mas sim o meta-documento que gerará 
+  o documento
 
 
 ## Programação Literária | *Literate Programming*
@@ -166,7 +176,10 @@ computational environment used to produce the results in the paper such as the
 code, data, etc. that can be used to reproduce the results and create new work 
 based on the research."
 
-- Wikipedia \ \ \  XD
+- Fonte: 
+  [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research) 
+  \ \ \  
+  `r emo::ji("laughing")`
 - "documentos" autocontidos: jupyter notebooks, git projects de R Markdown
 - a CRAN Task View de Reprodutibilidade de Pesquisa: 
   <https://cran.r-project.org/view=ReproducibleResearch>
@@ -181,7 +194,7 @@ based on the research."
     - como foi calculado, 
     - quais opções de visualização foram usadas no gráfico ou tabela
 - o código que buscou a informação online *já é* documentação
-    - de onde os dados foram raspados, 
+    - de onde os dados foram coletados/raspados/requeridos, 
     - como foi processado
     - quais opções de visualização foram usadas
 
@@ -244,7 +257,7 @@ based on the research."
 ![<font size=1>I coração R exclamation mark</font>](./IheartR1.png)
 
 <font size=1>
-Chupinhado desavergonhadamente de 
+Imagem chupinhada desavergonhadamente de 
 <https://blog.revolutionanalytics.com/2010/11/acm-data-mining-camp-1.html>
 </font>
 
@@ -311,9 +324,10 @@ analisar a sintaxe de
 
 acessíveis via API
 
-- técnicas de raspagem de dados
+- técnicas de coleta/raspagem/requisição de dados
     - uso de API pra pedir e obter dados em forma JSON ou XML
         - packages 
+    - uso de pacotes 
 - interface com sistemas cloud
     - até tem o sistema de API, mas alguns packages encapsulam a sintaxe,pra 
       facilitar a vida
