@@ -1,11 +1,11 @@
 ---
-title: "Documentos Reprodutíveis em R Markdown"
-subtitle: "como Forma de Autodocumentação do Processo de Produção de Conteúdo"
-author: "Marcelo Ventura Freire"
+title: "Documentos<br/>Reprodutíveis<br/>em R Markdown"
+subtitle: "como Forma de Autodocumentação<br/>do Processo de Produção de Conteúdo"
+author: "Marcelo Ventura Freire<br/>https://github.com/zyxdef/DoctoReprodutRMarkdown"
 date: "30/11/2019"
 output: 
   ioslides_presentation: 
-    incremental: yes
+    # incremental: yes
     transition: faster
     smart: yes
 ---
@@ -60,7 +60,7 @@ Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresenta
 - Linguagem de Marcação *Markdown* 
 - Formato de Arquivo e Interface *R Markdown*
 - Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
-- Sistema de interface programável de aplicativo *API*
+- Sistema de Interface de Programação de Aplicações *API*
 - Sistema JupiterWeb acessíveis através de sistema de API
     - porém usando só funcionalidades não exijam autenticação
 
@@ -80,11 +80,12 @@ usado também
 - as linguagens de programação *Python* e *SQL*
     - junto com o *Python*, vêm os programas acessíveis via biblioteca *Python*
         - manipulação de imagem, IoT, NLP, raspberry pi, ARCGIS
+    - "Quais outras linguagens?" --> Rode: `names(knitr::knit_engines$get())`
 - o sistema de preparação de documentos *LaTeX*
 - o pacote *Shiny* para montar web apps e dashboards
-- outras fontes de dados acessíveis/raspáveis através de sistema de API
-    - e.g., os sistemas *G Suite*, Facebook, Twitter, Instagram, Telegram, 
-      WhatsApp
+- outras fontes de dados acessíveis via sistema de API ou raspáveis de forma 
+  mais geral
+    - *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
         - todos esses exigem autenticação, que pode ser realizada com o pacote 
           `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
 
@@ -131,30 +132,22 @@ which a computer program is given an explanation of its logic in a natural
 language, such as English, interspersed with snippets of macros and traditional 
 source code, from which compilable source code can be generated."
 
-- Fonte: [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ \ \  
-  `r emo::ji("laughing")`
-- Donald Knuth == inventor do TeX e do LaTeX
+- Fonte: 
+  [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ 
+  `r emo::ji("laughing")` \ 
+  <font size=1>
+  Não faça citações à Wikipedia no seu trabalho de faculdade, monografia, 
+  dissertação ou tese!
+  </font>
+- Donald Knuth == inventor do TeX, que é um sistema tipográfico eletrônico e 
+  base do LaTeX
 - documento == descrição do documento + pedaços de texto + pedaços de código
-- <font size=1>Caveat emptor: Não faça citações à Wikipedia no seu trabalho de
-faculdade, monografia, disertação ou tese!  Apesar de muitas páginas terem
+- <font size=1>Não faça citações à Wikipedia: apesar de muitas páginas terem
 informação tecnicamente muito acurada, ainda assim há páginas muito ruins e
 imprecisas.  Se o leitor não souber diferenciar, pode levar gato por lebre fácil
 fácil.  Aqui (i) eu estou fazendo de zueira para uma apresentação, (ii) eu já
 conheço as definições, sabia avaliar se a definição deles estava OK e só estava
 com preguiça de redigir com meus próprios termos.</font>
-
-
-## Programação Literária | *Literate Programming*
-
-"Literate programming (LP) tools are used to obtain two representations from a 
-literate source file: one suitable for further compilation or execution by a 
-computer, the 'tangled' code, and another for viewing as formatted documentation, 
-which is said to be 'woven' from the literate source."
-
-- Fonte: [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ \ \  
-  `r emo::ji("laughing")`
-- moral da história: não redija o documento, mas sim o meta-documento que gerará 
-  o documento
 
 
 ## Programação Literária | *Literate Programming*
@@ -167,6 +160,10 @@ documentation containing code."
 
 - Ross Williams. FunnelWeb Tutorial Manual, pg 4.
     - apud. <http://www.literateprogramming.com/>
+- moral da história: não redija o documento, mas sim o meta-documento que gerará 
+  o documento
+
+
 
 ## Reprodutibilidade de Pesquisa | *Reproducible Research*
 
@@ -180,7 +177,8 @@ based on the research."
   [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research) 
   \ \ \  
   `r emo::ji("laughing")`
-- "documentos" autocontidos: jupyter notebooks, git projects de R Markdown
+- "documentos" autocontidos: jupyter notebooks, git projects de R Markdown com 
+  os microdados
 - a CRAN Task View de Reprodutibilidade de Pesquisa: 
   <https://cran.r-project.org/view=ReproducibleResearch>
 
@@ -202,12 +200,13 @@ based on the research."
 ## "Use sistema de controle de versão"
 
 - "*Use sistema de controle de versão*" é o "*Use protetor solar*" dos programadores
-- sistema de controle de versão (VCS == version control system)
 - "Version control is a system that records changes to a file or set of files 
   over time so that you can recall specific versions later."
 - "In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check 
   out the latest snapshot of the files; rather, they fully mirror the repository, 
   including its full history."
+    - VCS == version control system == sistema de controle de versão
+    - DVCS == distributed VCS == sistema de controle de versão distribuído
 
 ## "Use sistema de controle de versão"
 
@@ -224,7 +223,9 @@ based on the research."
 
 - um exemplo de SVC é o *git*, 
     - sistema de controle *distribuido* de versão
-        - *commit* no seu repositório local
+        - *diff* nos arquivos para individualizar as modificações
+        - *commit* no seu repositório local das alterações
+        - documentação das modificações feitas
         - *pull* e *push* para sincronização com o repositórios remoto
     - saiba mais em 
         - <https://git-scm.com/video/what-is-version-control>
@@ -288,18 +289,67 @@ Imagem chupinhada desavergonhadamente de
   *hyper text markup language* (`html`)</font>
 
 
-## Formato de Arquivo e Interface *R Markdown*
+## Formato de Arquivo *R Markdown*
+
+- Enquanto o *Markdown* é uma *linguagem de marcação*, o *R Markdown* é um 
+  formato de arquivo (cuja extensão geralmente é `.rmd` ou `.Rmd`) que contém 
+  três tipos de conteúdo:
+    - metadados sobre o documento, em formato [YAML](https://yaml.org/)
+    - texto, em formato Markdown, que permite incluir 
+        - hyperlink
+        - imagem
+        - tabela
+    - código, encapsulados dentro de *chunks*
+
+
 
 ## Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
 
 ![<font size=1>Nossa IDE amada</font>](rstudio2.png)
 
-## Sistema de Interface Programável de Aplicativo *API*
+## Sistema de Interface de Programação de Aplicações *API*
+
+Versão de quem tá com pressa do que é *API*:
+
+- É um conjunto de 
+    - um protocolo de troca de informação entre programas através da internet
+    - programas que ficam rodando de acordo com esse protocolo, quer para 
+      solicitar dados, quer para atender à solicitação
+
+
+## Sistema de Interface de Programação de Aplicações *API*
+
+Uma versão mais apressada ainda:
+
+- O seu computador pede (com jeitinho) alguma informação pra outro computador e 
+  ele faz o processamento que for necessário e te envia o que foi pedido
+    - com jeitinho == seguindo a sintaxe da API
+
+
+## Sistema de Interface de Programação de Aplicações *API*
+
+Versão menos apressada:
+
+- é uma forma de intergrar sistemas
+- pode ser para outras finalidades, como prestação de serviços
+- podem ser interna à máquina ou intranet
+
+
+## Sistema de Interface de Programação de Aplicações *API*
+
+
+
+
 
 ## Sistema JupiterWeb acessíveis através de sistema de *API*
 
 
----
+
+
+# Um Exemplo
+
+## 
+
 
 
 - dados na internet
@@ -344,9 +394,12 @@ acessíveis via API
 
 
 
-- programação literária (*literate programming*; mistura de texto e código), 
-- reprodutibilidade de pesquisa 
-  (*reproducible research*; )
 
 
+
+## Acabou! {.flexbox .vcenter}
+
+Muito Obrigado!
+
+<https://github.com/zyxdef/DoctoReprodutRMarkdown>
 
