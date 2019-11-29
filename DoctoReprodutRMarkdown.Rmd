@@ -1,5 +1,5 @@
 ---
-title: "Documentos<br/>Reprodutíveis<br/>em R Markdown"
+title: "Documentos Reprodutíveis<br/>em R Markdown"
 subtitle: "como Forma de Autodocumentação<br/>do Processo de Produção de Conteúdo"
 author: "Marcelo Ventura Freire<br/>https://github.com/zyxdef/DoctoReprodutRMarkdown"
 date: "30/11/2019"
@@ -7,6 +7,7 @@ output:
   ioslides_presentation: 
     # incremental: yes
     transition: faster
+    wide: yes
     smart: yes
 ---
 
@@ -16,41 +17,45 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## O que queremos fazer? {.flexbox .vcenter}
 
-Apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade 
+Vamos apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade 
 de produção, sem perda de precisão ou acurácia e com ganho de segurança.
+
+Vamos falar menos sobre R, R Markdown e R Studio e mais sobre outros tópicos que 
+potencializam o uso dos primeiros.
+
 
 
 ## Outline
 
 Nesta palestra, vamos apresentar 
 
-- a forma "tradicional" de produzir conteúdo
-- um conjunto de princípios, boas práticas e recursos computacionais 
-    - alguns mais e outros menos manjados quando considerados separadamente, 
-      **mas** que
-    - não são usados conjuntamente com a frequência e a orientação que mereciam
-- uma forma de utilizar os itens acima para trabalhar de forma melhor que a 
-  "tradicional"
-- com isso, esta palestra pode ficar trivial para alguns e útil para outros
+- um conjunto de princípios, boas práticas e ferramentas que potencializarão o 
+  seu uso do R Markdown no RStudio se você ainda não os estiver usando
+    - alguns mais e outros menos manjados quando considerados separadamente
+    - mas que não são usados conjuntamente com a frequência e a orientação que 
+      poderiam
+
 
 
 ## Quais princípios?
 
 Princípios que consideraremos
 
-- Programação Literária (*Literate Programming*), 
+- Programação Literária (*Literate Programming*)
 - Reprodutibilidade de Pesquisa (*Reproducible Research*)
 
 
 
-## Quais boas práticas?
+## Quais boas práticas de programação?
 
 Boas práticas de programação que consideraremos
 
 - "Código é documentação"
-- "Use sistema de controle de versão"
 - "Confie à programação os processos repetitivos"
 - "Reaproveite código que funciona"
+- "Use sistema de controle de versão"
+
+
 
 ## Quais ferramentas de computação?
 
@@ -58,11 +63,15 @@ Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresenta
 
 - Linguagem de Programação *R*
 - Linguagem de Marcação *Markdown* 
-- Formato de Arquivo e Interface *R Markdown*
+- Formato de Arquivo *R Markdown*
+- Aplicativo *Pandoc*
 - Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
 - Sistema de Interface de Programação de Aplicações *API*
-- Sistema JupiterWeb acessíveis através de sistema de API
+- Sistema JupiterWeb, da USP
+    - acessível através de sistema de API
     - porém usando só funcionalidades não exijam autenticação
+
+
 
 ---
 
@@ -79,17 +88,20 @@ usado também
 
 - as linguagens de programação *Python* e *SQL*
     - junto com o *Python*, vêm os programas acessíveis via biblioteca *Python*
-        - manipulação de imagem, IoT, NLP, raspberry pi, ARCGIS
-    - "Quais outras linguagens?" --> Rode: `names(knitr::knit_engines$get())`
+        - manipulação de imagem, IoT, NLP, raspberry pi, ARCGIS etc.
+    - Quais outras linguagens? Rode \ `names(knitr::knit_engines$get())` no seu 
+      R pra ocê vê
 - o sistema de preparação de documentos *LaTeX*
 - o pacote *Shiny* para montar web apps e dashboards
-- outras fontes de dados acessíveis via sistema de API ou raspáveis de forma 
+- outras fontes de dados acessíveis via sistema REST API ou raspáveis de forma 
   mais geral
     - *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
         - todos esses exigem autenticação, que pode ser realizada com o pacote 
           `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
 
 </font>
+
+
 
 ## Abordagem "tradicional"
 
@@ -99,7 +111,8 @@ usado também
     - tabelas
     - etc.
 - junção manual através do recurso de cópia e colagem do editor de texto
-    - geralmente MS-Word ou Google Docs
+    - geralmente no Word ou no Google Docs
+
 
 
 ## Abordagem "tradicional"
@@ -111,79 +124,74 @@ usado também
     - perda da origem das partes do conteúdo
     - perda do *como* as partes foram feitas
     - se uma das imagens ou tabelas não for mais reconhecida internamente
-        - no MS-Word, se não houver uma cópia em disco junto com o .doc/.docx 
+        - no Word, se não houver uma cópia em disco junto com o .doc/.docx 
         - no Google Docs, se não houver uma cópia no Google Drive
         - então já era: o grande X vermelho from hell!
+
+
 
 ## Então Já Era! {.flexbox .vcenter}
 
 O grande X vermelho from hell!
 
-![Big, Bad, Red X](./redX.jpeg)
+
+![Big, Bad, Red X](./redX1.png)
+
+
 
 # Princípios, Boas Práticas e Ferramentas
 
+
+
 # Princípios
 
-## Programação Literária | *Literate Programming*
-
-"Literate programming is a programming paradigm introduced by Donald Knuth in 
-which a computer program is given an explanation of its logic in a natural 
-language, such as English, interspersed with snippets of macros and traditional 
-source code, from which compilable source code can be generated."
-
-- Fonte: 
-  [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming) \ 
-  `r emo::ji("laughing")` \ 
-  <font size=1>
-  Não faça citações à Wikipedia no seu trabalho de faculdade, monografia, 
-  dissertação ou tese!
-  </font>
-- Donald Knuth == inventor do TeX, que é um sistema tipográfico eletrônico e 
-  base do LaTeX
-- documento == descrição do documento + pedaços de texto + pedaços de código
-- <font size=1>Não faça citações à Wikipedia: apesar de muitas páginas terem
-informação tecnicamente muito acurada, ainda assim há páginas muito ruins e
-imprecisas.  Se o leitor não souber diferenciar, pode levar gato por lebre fácil
-fácil.  Aqui (i) eu estou fazendo de zueira para uma apresentação, (ii) eu já
-conheço as definições, sabia avaliar se a definição deles estava OK e só estava
-com preguiça de redigir com meus próprios termos.</font>
 
 
 ## Programação Literária | *Literate Programming*
 
-"A traditional computer program consists of a text file containing program code. 
-Scattered in amongst the program code are comments which describe the various 
-parts of the code. In literate programming the emphasis is reversed. Instead of 
-writing code containing documentation, the literate programmer writes 
-documentation containing code."
+"Um programa de computador tradicional consiste em um arquivo de texto contendo 
+o código do programa.  Espalhados no código do programa, há comentários que 
+descrevem as várias partes do código. Na programação literária, a ênfase é 
+invertida. Ao invés de escrever código contendo documentação, o programador 
+literário escreve documentação que contém o código." --- 
+[Ross Williams](http://www.literateprogramming.com/)
 
-- Ross Williams. FunnelWeb Tutorial Manual, pg 4.
-    - apud. <http://www.literateprogramming.com/>
-- moral da história: não redija o documento, mas sim o meta-documento que gerará 
-  o documento
+- documento == mar de texto + ilhas de código
 
 
 
 ## Reprodutibilidade de Pesquisa | *Reproducible Research*
 
-"The term *reproducible research* refers to the idea that the ultimate product 
-of academic research is the paper along with the laboratory notebooks and full 
-computational environment used to produce the results in the paper such as the 
-code, data, etc. that can be used to reproduce the results and create new work 
-based on the research."
+"O termo *pesquisa reproduzível* refere-se à idéia de que o produto final da 
+pesquisa acadêmica é o artigo, juntamente com os cadernos de laboratório e o 
+ambiente computacional completo usado para produzir os resultados no artigo, 
+como código, dados, etc. usado para reproduzir os resultados e criar novos 
+trabalhos com base na pesquisa."
 
 - Fonte: 
   [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research) 
   \ \ \  
   `r emo::ji("laughing")`
-- "documentos" autocontidos: jupyter notebooks, git projects de R Markdown com 
-  os microdados
 - a CRAN Task View de Reprodutibilidade de Pesquisa: 
   <https://cran.r-project.org/view=ReproducibleResearch>
 
 
+
+## Reprodutibilidade de Pesquisa | *Reproducible Research*
+
+Transportando para a realidade da produção de conteúdo, o produto final passa a 
+ser a criação de projeto inteiro que gerou o documento, incluíndo texto, código, 
+imagens etc.
+
+- "documentos" autocontidos: jupyter notebooks, projetos de R Markdown com os 
+  microdados, imagens e tabelas
+- moral da história: não redija o documento, mas sim um meta-documento que gerará 
+  o documento
+
+
 # Boas práticas
+
+
 
 ## "Código é documentação"
 
@@ -197,63 +205,137 @@ based on the research."
     - quais opções de visualização foram usadas
 
 
-## "Use sistema de controle de versão"
-
-- "*Use sistema de controle de versão*" é o "*Use protetor solar*" dos programadores
-- "Version control is a system that records changes to a file or set of files 
-  over time so that you can recall specific versions later."
-- "In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check 
-  out the latest snapshot of the files; rather, they fully mirror the repository, 
-  including its full history."
-    - VCS == version control system == sistema de controle de versão
-    - DVCS == distributed VCS == sistema de controle de versão distribuído
-
-## "Use sistema de controle de versão"
-
-- permite rastrear a versão documento
-    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o 
-      "*é, ninguém mais consegue achar o arquivo de imagem e nem cópia da versão anterior*"?
-    - pois é, isso não acontece com um sistema de controle de versão
-    - é possível dar um *rollback* pra qualquer versão de interesse
-- bônus: permite redação colaborativa (não simultânea) do documento
-    - Google Docs também permite redação colaborativa, só que simultânea
-- bônus: permite documentar quais alterações foram feitas e por quem
-
-## "Use sistema de controle de versão"
-
-- um exemplo de SVC é o *git*, 
-    - sistema de controle *distribuido* de versão
-        - *diff* nos arquivos para individualizar as modificações
-        - *commit* no seu repositório local das alterações
-        - documentação das modificações feitas
-        - *pull* e *push* para sincronização com o repositórios remoto
-    - saiba mais em 
-        - <https://git-scm.com/video/what-is-version-control>
-        - <https://git-scm.com/video/what-is-git>
-        - <https://git-scm.com/book/en/v2>
-
-
 
 ## "Confie à programação os processos repetitivos"
 
 - não use o *loop* copie-cole-altere-copie-cole-altere-...
     - você ***vai*** errar em algum ponto
-    - se você precisar refazer, vai errar em *outro* ponto, de modo que
-      nunca vai ficar igual à primeira versão
-- use um *chunk* que obtenha, processe e formate os dados
+    - se você precisar refazer, vai errar em *outro* ponto, de modo que nunca 
+      vai ficar igual à primeira versão
+- ao invés disso, use um *chunk* para obter, processar e formatar os dados
 
 
 
 ## "Reaproveite código que funciona"
 
-- o *chunk* que funciona em um documento pode servir de início e ser adaptado para 
-  uma finalidade próxima em outro documento
+- Um *chunk* que funciona em um documento pode ser adaptado para uma finalidade 
+  próxima em outro documento
+    - melhor do que começar do zero, principalmente de for um programa 
+      potencialmente trabalhoso
+- não dá pra seguir essa boa prática se você não usa *chunks*, como no Word ou 
+  no Google Docs
+
+
+
+## "Use sistema de controle de versão"
+
+- "*Use sistema de controle de versão*" é o "*Use protetor solar*" dos programadores
+- Sistema de Controle de Versão (SCV) é um sistema que registra as mudanças 
+  cumulativas de um conjunto de arquivos, de modo a seja possível encontrar o 
+  estado corrente dos arquivos em qualquer momento do desenvolvimento do projeto
+  que se deseje
+- permite rastrear a versão documento
+    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o 
+      "*é, ninguém tá achando a versão anterior da arquivo*"?
+    - pois é, isso não acontece se você usar um sistema de controle de versão, 
+      pois é possível dar um *rollback* pra qualquer versão de interesse
+
+
+
+## Sistema de Controle de Versão | Partes de um SCV
+
+- diretório do seu projeto
+    - arquivos que você edita, a terem suas versões monitoradas
+    - podem ser seus programas, imagem, dados etc.
+- repositório
+    - um segundo diretório, onde o SCV vai guardar as mudanças ocorridas no 
+      diretório do seu projeto
+    - frequentemente, armazendado *dentro* do diretório do projeto como um 
+      diretório oculto que não será monitorado (para evitar recursão infinita)
+
+
+## Sistema de Controle de Versão | O que um SCV faz?
+
+- *commit* -- detecta e armazena no repositório as mudanças nos arquivos do projeto
+- *branch* -- cria ramos independentes e intercomunicáveis de edição do projeto
+- *merge* -- mescla ramos intercomunicáveis
+- *push* -- faz o repositório remoto ficar igual ao repositório local
+- *pull* -- faz o repositório local ficar igual ao repositório remoto
+- *clone* -- cria repositório local que é cópia de um repositório remoto
+- *fork* -- cria repositório remoto que é cópia de um outro repositório remoto
+
+
+
+<!-- ## Sistema de Controle de Versão | O que um SCV faz? *Commit* -->
+
+<!-- - *commit* -->
+<!--     - detecta arquivos novo ou arquivo removido do diretório do projeto -->
+<!--     - detecta alterações nos arquivos em relação à última versão do projeto  -->
+<!--       armazenada no repositório (*diff*) -->
+<!--         - inclusão, exclusão e alteração de linhas -->
+<!--             - alteração == exclusão + inclusão -->
+<!--     - cria no repositório as novas alterações, detectadas acima -->
+<!--     - atualiza a última versão dos arquivos, para o próximo *commit* -->
+<!--     - registra o ou os *commit* anterior e anexa uma assinatura no *commit* atual -->
+<!--     - ele faz isso sempre, sem esquecer ou pular -- ao contrário de você, seu  -->
+<!--       humano falível e destraído! \ \ `r emo::ji("robot")` -->
+
+
+<!-- ## Sistema de Controle de Versão | O que um SCV faz? *Branch* -->
+
+<!-- Você pode precisar criar versões diferentes do mesmo projeto (e.g., versões *dev*  -->
+<!-- e *produção* do modelos, ou apresentações nas versões *para o setor Financeiro* e  -->
+<!-- *para o setor Vendas*), mas precisa manter intercomunicabilidade entre os projetos -->
+
+<!-- - *branch* -->
+<!--     - a partir de um mesmo *commit*, você pode começar a editar versões  -->
+<!--       progressivamente diferentes do projeto, criando ramos (*branches*)  -->
+<!--       diferentes do mesmo projeto -->
+<!--     - um SCV permite cambiar entre e continuar trabalhando nos diferentes *branches* -->
+
+
+<!-- ## Sistema de Controle de Versão | O que um SCV faz? *Merge* -->
+
+<!-- Um SCV consegue administrar um sistema de mesclas (*merging*) entre *branches* -->
+
+<!-- - *merge* -->
+<!--     - cria um *commit* com a junção do último *commit* de cada *branch* -->
+<!--         - esse *commit* tem a assinatura dos dois *commits* que o geraram -->
+<!--     - se houver conflitos ou colisões entre os dois commits, -->
+<!--         - o usuário resolve manualmente o conflito/colisão e -->
+<!--         - gera outro *commit* -->
+
+
+<!-- ## Sistema de Controle de Versão | O que um SCV distribuído faz? *Pull* e *push* -->
+
+<!-- Em um SCV *distribuído*, é possível criar um repositório remoto (em outra máquina) -->
+<!-- a ser sincronizado com o repositório local.  Nesse caso, é possível que varias  -->
+<!-- pessoas editem o mesmo projeto, consolidando as modificações de todos no  -->
+<!-- repositório remoto -->
+
+<!-- Um SCV distribuído pode  -->
+
+<!-- - *pull*: mesclar um repositório local com remoto -->
+<!-- - sinalizar onde houver conflito de código, a ser resolvido manualmente -->
+<!-- - só então *push*: atualizar o repositório remoto a partir do local -->
+<!-- - tudo isso, usando *merge* quando necessários -->
+
+
+## Sistema de Controle de Versão | git `r emo::ji_glue(":heart::heart::heart::heart:")`
+
+Um exemplo de SVC é o *git*
+
+- <https://git-scm.com/video/what-is-version-control>
+- <https://git-scm.com/video/what-is-git>
+- <https://git-scm.com/book/en/v2>
+
+que é utilizado pelo RStudio
 
 
 
 # Ferramentas
 
-## A linguagem de programação *R* {.flexbox .vcenter}
+## A Linguagem de Programação *R* {.flexbox .vcenter}
 
 ![<font size=1>I coração R exclamation mark</font>](./IheartR1.png)
 
@@ -266,40 +348,38 @@ Imagem chupinhada desavergonhadamente de
 
 ## Linguagem de Marcação *Markdown* 
 
-- uma linguagem de marcação desvincula conteúdo e forma do texto
-    - ao invés de formatar diretamente o texto e ficar com uma imagem da versão 
-      final do texto, você escreve o seu conteúdo sem se preocupar com formatação 
-      e aí, só no fim, você gera uma versão formatada do texto
-- a linguagem *Markdown* é processada pelo aplicativo *pandoc*, que implementa 
-  programação literária
-
-## Linguagem de Marcação *Markdown* 
-
-- o *Markdown* permite incluir no documento
-    - texto
-    - imagens
-    - tabelas
-    - pedaços de código (*chunks*) de várias linguagens
-- o *pandoc* consegue gerar saídas em
-    - .pdf (texto ou *slides*)
-    - .html (texto, *slides* ou *dashboard*)
-    - .ppt/.pptx
-    - .doc/.docx
+- Uma *linguagem de marcação* desvincula conteúdo e forma do texto
+    - você escreve o seu conteúdo sem se preocupar com formatação e precisa gerar 
+      explicitamente uma visão formatada do texto, em oposição ao Word
+- A linguagem *Markdown* permite incluir no documento texto, hiperlink, imagens, 
+  tabelas e pedaços de código (*chunks*) de várias linguagens através de uma 
+  sintaxe mais simples do que o HTML
+- Geralmente a extensão `.md` é utilizada em arquivos com texto em *Markdown*
 - <font size=1>*markdown* é um trocadilho com *markup*, como em 
   *hyper text markup language* (`html`)</font>
+
 
 
 ## Formato de Arquivo *R Markdown*
 
 - Enquanto o *Markdown* é uma *linguagem de marcação*, o *R Markdown* é um 
-  formato de arquivo (cuja extensão geralmente é `.rmd` ou `.Rmd`) que contém 
-  três tipos de conteúdo:
+  formato de arquivo (cuja extensão geralmente é `.rmd` ou `.Rmd`) baseada em 
+  Markdown que contém três tipos de conteúdo:
     - metadados sobre o documento, em formato [YAML](https://yaml.org/)
-    - texto, em formato Markdown, que permite incluir 
-        - hyperlink
-        - imagem
-        - tabela
+    - texto, em formato Markdown, o que permite incluir hiperlink, imagem e tabela
     - código, encapsulados dentro de *chunks*
+
+
+
+## Aplicativo *Pandoc*
+
+O aplicativo *Pandoc* 
+
+- é um conversor entre diversas linguagens de marcação,
+- implementa programação literária
+- processa a linguagem *Markdown* e o formato *R Markdown*
+- consegue gerar saídas em `.pdf` (texto ou *slides*), `.html` (texto, *slides* 
+  ou *dashboard*), `.ppt`/`.pptx`, `.doc`/`.docx` entre outros
 
 
 
@@ -307,99 +387,199 @@ Imagem chupinhada desavergonhadamente de
 
 ![<font size=1>Nossa IDE amada</font>](rstudio2.png)
 
-## Sistema de Interface de Programação de Aplicações *API*
 
-Versão de quem tá com pressa do que é *API*:
+
+## Interface de Programação de Aplicações *API* 
 
 - É um conjunto de 
-    - um protocolo de troca de informação entre programas através da internet
+    - um protocolo de troca de informação entre programas
     - programas que ficam rodando de acordo com esse protocolo, quer para 
-      solicitar dados, quer para atender à solicitação
-
-
-## Sistema de Interface de Programação de Aplicações *API*
-
-Uma versão mais apressada ainda:
-
-- O seu computador pede (com jeitinho) alguma informação pra outro computador e 
-  ele faz o processamento que for necessário e te envia o que foi pedido
-    - com jeitinho == seguindo a sintaxe da API
-
-
-## Sistema de Interface de Programação de Aplicações *API*
-
-Versão menos apressada:
-
-- é uma forma de intergrar sistemas
-- pode ser para outras finalidades, como prestação de serviços
-- podem ser interna à máquina ou intranet
-
-
-## Sistema de Interface de Programação de Aplicações *API*
+      realizar solicitações, quer para atender às solicitações
+- essa troca de informação pode ser interna a uma máquina, interna a uma intranet 
+  ou na internet
+- é uma forma de integrar sistemas através de troca de informação textual
+- pode ser usado para atividades tão diversas quanto obter as mensagens do 
+  R Brasil no Telegram, executar uma transferência bancária e ativar os sensores 
+  de movimento de uma sala
+- as páginas de internet dinâmicas são, essencialmente, o resultado de uma 
+  transação por API
+    - <font size=1>mas há outras possibilidades de retorno além de páginas em HTML, 
+      como dados em formato JSON ou XML ou somente códigos de retorno</font>
 
 
 
+## Sistema JupiterWeb 
 
+Usaremos o JupiterWeb para gerar páginas dinâmicas via API no exemplo, mas 
+agora sua URL será usada para ilustrar a estrutura da URL de uma requisição API
 
-## Sistema JupiterWeb acessíveis através de sistema de *API*
+<font size=4>
 
-
-
-
-# Um Exemplo
-
-## 
-
-
-
-- dados na internet
-    - páginas estáticas
-    - páginas dinâmicas
-        - geradas por API
-            - url de uma página gerada por API
-            
-
-
-            
-pegar a imagem de:
-- <https://uspdigital.usp.br/jupiterweb/jupDisciplinaBusca?tipo=D>
-
-analisar a sintaxe de
-- <https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=ACH0021>
-- <https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=86&codcur=86450&codhab=202&tipo=N>
+- `https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=ACH0021`
+    - `https://uspdigital.usp.br/` 
+        - URL base do *host* da USP que roda o aplicativo servidor do Jupiterweb
+    - `https://uspdigital.usp.br/jupiterweb/` 
+        - *endpoint* dos serviços do JupiterWeb
+    - `https://uspdigital.usp.br/jupiterweb/obterDisciplina` 
+        - um dos comandos do *endpoint* `jupiterweb` do JupiterWeb
+    - `?nomdis=&sgldis=ACH0021` 
+        - opções passadas ao comando `obterDisciplinas`
+            - `"nomdis="`: o parâmetro `nomdis` recebeu a string vazia "" como valor
+            - `"sgldis=ACH0021"`: o parâmetro `sgldis` recebeu a `ACH0021` como valor
+        - o `"?"` separou o comando e a lista de parâmetros, o `"&"` separou os pares 
+          da lista de parâmetro e o `"="` separou o nome e o valor dos parâmetros
+        
+</font>
 
 
 
+# O Exemplo
 
+## O Exemplo
+
+Eu preciso criar um texto que incluirá uma tabela com disciplinas referentes a 
+um curso de bacharelado (que preciso pegar no JupiterWeb de uma página apropriada) 
+e acrescentar informação sobre diponibilidade para elas
+
+Pelo método "tradicional"
+
+- eu acessaria interativamente no navegador a página com a tabela
+- copiaria no navegador e colaria no Excel ou Word na ponta do mouse
+- editaria manualmente
+
+
+
+## O Exemplo
+
+![A página HTML no JupiterWeb e a tabela de disciplinas a ser incluída no texto](./jupiter1.png)
+
+
+
+## O Exemplo
+
+Por outro lado, eu posso criar um documento R Markdown que contenha três *chunks*
+
+<font size=4>
+
+- *chunk* 1
+    - obtenha a página HTML de disciplinas do curso de interesse no Jupiter via API
+    - raspe a tabela de disciplinas dentro da página obtida
+    - elimine as linhas com de pré-requisitos
+    - deixe só as colunas sigla e nome da disciplina
+    - adicione colunas de disponibiliade
+    - crie uma planilha no Google Sheets com esses dados
+- *chunk* 2
+    - abra essa planilha no navegador para preenchimento manual
+- *chunk* 3
+    - traga essa planilha de volta
+    - formate bonitinho como tabela e imprima
+
+</font>
+
+
+
+## O Exemplo 
+
+*Chunk* 1 -- Parte 1
+
+<font size=4>
+
+```
+lista_disciplinas <- 
+  "https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=55&codcur=55070&codhab=4&tipo=N" %>% 
+  xml2::read_html() %>%
+  rvest::html_nodes("table") %>% 
+  magrittr::extract(2) %>% 
+  rvest::html_table(fill = T) %>% 
+  magrittr::extract2(1) %>%
+  dplyr::select(1:2) %>% 
+  dplyr::filter(stringr::str_detect(X1, "^SME[0-9]{4}$")) %>%
+  dplyr::transmute(
+    "Topo" = c(NA),
+    "Gosto" = c(NA),
+    disciplina = stringr::str_c(X1, X2, sep = " - ")
+  ) 
+```
+
+</font>
+
+
+
+## O Exemplo 
+
+*Chunk* 1 -- Parte 2
+
+<font size=4>
+
+```
+googlesheets::gs_auth()
+tryCatch(
+  {planilha <- googlesheets::gs_title("discip")},
+  error = function(e) {planilha <<- googlesheets::gs_new("discip")}
+)
+tryCatch(
+  googlesheets::gs_edit_cells(planilha, input = lista_disciplinas),
+  message = function(m) {
+    linhas_colunas <<- 
+      stringr::str_extract(m$message, '".*"') %>%
+      stringr::str_remove_all('"')
+  }
+)
+```
+
+</font>
+
+
+
+## O Exemplo 
+
+*Chunk* 2
+
+```
+googlesheets::gs_browse(planilha)
+```
+
+*Chunk* 3
+
+```
+googlesheets::gs_auth()
+googlesheets::gs_title("discip") %>%
+  googlesheets::gs_read() %>%
+  kableExtra::kable()
+```
+
+
+
+## O Exemplo | Resultado
+
+![](./resultado1.png)
+
+
+
+## O Exemplo | Vantagens adicionais
+
+- se eu tivesse um vetor de códigos de curso, seria possível gerar uma sequência 
+de tabelas adaptando um loop no código original
+
+<font size=6> AQUI </font>
+
+---
 
 acessíveis via API
 
 - técnicas de coleta/raspagem/requisição de dados
     - uso de API pra pedir e obter dados em forma JSON ou XML
         - packages 
-    - uso de pacotes 
+    - uso de pacotes que encapsulam o cpodigo API
 - interface com sistemas cloud
     - até tem o sistema de API, mas alguns packages encapsulam a sintaxe,pra 
       facilitar a vida
-- reaproveitamento de código em outras circunstâncias
-  
 
 
 
-- reproducible research
-- reproducible documents
-- <https://kbroman.org/datacarpentry_R_2018-06-04/04-rmarkdown.html>
-- litterate programming
-- <https://andrewbtran.github.io/NICAR/2017/reproducibility-rmarkdown/rmarkdown.html>
+# Muito Obrigado!
 
-
-
-
-
-
-## Acabou! {.flexbox .vcenter}
-
-Muito Obrigado!
+Repositório desta apresentação
 
 <https://github.com/zyxdef/DoctoReprodutRMarkdown>
 
