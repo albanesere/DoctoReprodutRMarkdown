@@ -235,23 +235,24 @@ imagens etc.
   estado corrente dos arquivos em qualquer momento do desenvolvimento do projeto
   que se deseje
 - permite rastrear a versão documento
-    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" e o 
-      "*é, ninguém tá achando a versão anterior da arquivo*"?
-    - pois é, isso não acontece se você usar um sistema de controle de versão, 
+    - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" 
+      <!-- e o "*é, ninguém tá achando a versão anterior da arquivo*" -->
+      ?
+    - isso não acontece se você usar um sistema de controle de versão, 
       pois é possível dar um *rollback* pra qualquer versão de interesse
 
 
 
-## Sistema de Controle de Versão | Partes de um SCV
+<!-- ## Sistema de Controle de Versão | Partes de um SCV -->
 
-- diretório do seu projeto
-    - arquivos que você edita, a terem suas versões monitoradas
-    - podem ser seus programas, imagem, dados etc.
-- repositório
-    - um segundo diretório, onde o SCV vai guardar as mudanças ocorridas no 
-      diretório do seu projeto
-    - frequentemente, armazendado *dentro* do diretório do projeto como um 
-      diretório oculto que não será monitorado (para evitar recursão infinita)
+<!-- - diretório do seu projeto -->
+<!--     - arquivos que você edita, a terem suas versões monitoradas -->
+<!--     - podem ser seus programas, imagem, dados etc. -->
+<!-- - repositório -->
+<!--     - um segundo diretório, onde o SCV vai guardar as mudanças ocorridas no  -->
+<!--       diretório do seu projeto -->
+<!--     - frequentemente, armazendado *dentro* do diretório do projeto como um  -->
+<!--       diretório oculto que não será monitorado (para evitar recursão infinita) -->
 
 
 ## Sistema de Controle de Versão | O que um SCV faz?
@@ -410,8 +411,8 @@ O aplicativo *Pandoc*
 
 ## Sistema JupiterWeb 
 
-Usaremos o JupiterWeb para gerar páginas dinâmicas via API no exemplo, mas 
-agora sua URL será usada para ilustrar a estrutura da URL de uma requisição API
+Usaremos o JupiterWeb para gerar páginas dinâmicas via API em um exemplo adiante, 
+mas agora sua URL será usada para ilustrar a estrutura da URL de uma requisição API
 
 <font size=4>
 
@@ -433,9 +434,9 @@ agora sua URL será usada para ilustrar a estrutura da URL de uma requisição A
 
 
 
-# O Exemplo
+# Exemplo
 
-## O Exemplo
+## Exemplo
 
 Eu preciso criar um texto que incluirá uma tabela com disciplinas referentes a 
 um curso de bacharelado (que preciso pegar no JupiterWeb de uma página apropriada) 
@@ -449,13 +450,13 @@ Pelo método "tradicional"
 
 
 
-## O Exemplo
+## Exemplo
 
 ![A página HTML no JupiterWeb e a tabela de disciplinas a ser incluída no texto](./jupiter1.png)
 
 
 
-## O Exemplo
+## Exemplo
 
 Por outro lado, eu posso criar um documento R Markdown que contenha três *chunks*
 
@@ -478,7 +479,7 @@ Por outro lado, eu posso criar um documento R Markdown que contenha três *chunk
 
 
 
-## O Exemplo 
+## Exemplo 
 
 *Chunk* 1 -- Parte 1
 
@@ -505,7 +506,7 @@ lista_disciplinas <-
 
 
 
-## O Exemplo 
+## Exemplo 
 
 *Chunk* 1 -- Parte 2
 
@@ -531,7 +532,7 @@ tryCatch(
 
 
 
-## O Exemplo 
+## Exemplo 
 
 *Chunk* 2
 
@@ -550,16 +551,18 @@ googlesheets::gs_title("discip") %>%
 
 
 
-## O Exemplo | Resultado
+## Exemplo | Resultado
 
 ![](./resultado1.png)
 
 
 
-## O Exemplo | Vantagens adicionais
+## Exemplo | Potencialidades a Explorar
 
-- se eu tivesse um vetor de códigos de curso, seria possível gerar uma sequência 
-de tabelas adaptando um loop no código original
+- 
+- "Reaproveite código que funciona" + interface API: se eu tivesse um vetor de 
+códigos de curso, seria possível gerar uma sequência de tabelas adaptando um 
+*loop* no código original
 
 <font size=6> AQUI </font>
 
