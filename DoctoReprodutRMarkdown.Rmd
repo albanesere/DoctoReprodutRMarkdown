@@ -11,107 +11,113 @@ output:
     smart: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+## Primeiramente
 
-## O que queremos fazer? {.flexbox .vcenter}
+Obrigado aos organizadores do evento
 
-Vamos apresentar uma forma de o produtor de conteúdo conseguir escalar a sua capacidade 
-de produção, sem perda de precisão ou acurácia e com ganho de segurança.
+Obrigado à plateia presente
 
-Vamos falar menos sobre R, R Markdown e R Studio e mais sobre outros tópicos que 
-potencializam o uso dos primeiros.
+
+
+## O que quero fazer? {.flexbox .vcenter}
+
+Vou apresentar uma possibilidade de você, produtor de conteúdo, conseguir escalar 
+a sua capacidade de produção, com ganho de segurança e sem perda de precisão ou 
+acurácia.
+
+Vou falar menos sobre *R*, *R Markdown* e *R Studio* e mais sobre outros tópicos 
+que propiciam uma exploração melhor dos recursos desses primeiros.
 
 
 
 ## Outline
 
-Nesta palestra, vamos apresentar 
+Vou apresentar 
 
-- um conjunto de princípios, boas práticas e ferramentas que potencializarão o 
-  seu uso do R Markdown no RStudio se você ainda não os estiver usando
-    - alguns mais e outros menos manjados quando considerados separadamente
-    - mas que não são usados conjuntamente com a frequência e a orientação que 
-      poderiam
-
+- um conjunto de princípios, boas práticas de programação e ferramentas de 
+  computação que potencializam o uso do R Markdown no RStudio
+    - alguns desses mais manjados, outros menos, quando considerados em separado
+    - contudo que podem ser mais e melhor usados em conjunto
 
 
-## Quais princípios?
 
-Princípios que consideraremos
+## Princípios
 
 - Programação Literária (*Literate Programming*)
 - Reprodutibilidade de Pesquisa (*Reproducible Research*)
 
 
 
-## Quais boas práticas de programação?
+## Boas Práticas de Programação
 
-Boas práticas de programação que consideraremos
+Caracterizadas pelos aforismos
 
 - "Código é documentação"
 - "Confie à programação os processos repetitivos"
-- "Reaproveite código que funciona"
+- "Reaproveite código que já funciona"
 - "Use sistema de controle de versão"
 
 
 
-## Quais ferramentas de computação?
+## Ferramentas de Computação
 
-Ferramentas que utilizaremos para ilustrar uma aplicação *aqui nesta apresentação*
+Eu usei para criar um exemplo de aplicação para esta apresentação de hoje
 
 - Linguagem de Programação *R*
+- IDE *RStudio*
 - Linguagem de Marcação *Markdown* 
 - Formato de Arquivo *R Markdown*
 - Aplicativo *Pandoc*
-- Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
 - Sistema de Interface de Programação de Aplicações *API*
 - Sistema JupiterWeb, da USP
-    - acessível através de sistema de API
-    - porém usando só funcionalidades não exijam autenticação
+    - que é acessível através de sistema de API
+    - porém só vou usar funcionalidades não exijam autenticação
 
+... mas ...
 
 
 ---
 
 <font size=6>
 
-**Ferramentas que também poderíamos considerar pelo mesmo custo mental se você já as dominar, mas que não daria tempo nem espaço de abordarmos porque já fomos insanamente ambiciosos de enfiar um monte de coisas na apresentação**
+**Ferramentas e recursos que também poderiam ser consideradas pelo mesmo custo mental se você já as dominar, mas que não daria tempo nem espaço de eu abordar aqui nestes 15 min porque já fui insanamente ambicioso de enfiar um monte de coisas na apresentação**
 
 </font>
 
 <font size=4>
 
-Por questão de brevidade, não vamos usar nesta apresentação, mas poderíamos ter 
-usado também 
-
 - as linguagens de programação *Python* e *SQL*
-    - junto com o *Python*, vêm os programas acessíveis via biblioteca *Python*
-        - manipulação de imagem, IoT, NLP, raspberry pi, ARCGIS etc.
-    - Quais outras linguagens? Rode \ `names(knitr::knit_engines$get())` no seu 
-      R pra ocê vê
-- o sistema de preparação de documentos *LaTeX*
-- o pacote *Shiny* para montar web apps e dashboards
-- outras fontes de dados acessíveis via sistema REST API ou raspáveis de forma 
-  mais geral
-    - *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
-        - todos esses exigem autenticação, que pode ser realizada com o pacote 
-          `auth0`, que foi apresentado pelo Júlio Trecenti hoje mais cedo
+    - junto com o *Python*, vêm todos os programas acessíveis via biblioteca *Python*
+        - manipulação de imagem, IoT, NLP, Raspberry Pi, ARCGIS etc.
+    - <<< Quantas e quais outras linguagens posso usar nos chunks? 
+      Rode \ `names(knitr::knit_engines$get())` no seu R procê vê
+- o sistema  *LaTeX* >>> de preparação de documentos
+- o pacote *Shiny* >>> para montar *web apps* e *dashboards*
+- outras fontes de dados acessíveis via sistemas *RESTful API* ou raspáveis de 
+  forma mais geral >>>
+    - <<< *G Suite*, Facebook, Twitter, Instagram, Telegram, WhatsApp
+    - <<< Open Data: 
+      [World Bank Open Data](https://data.worldbank.org/),
+      [World Health Organization Open data repository](https://www.who.int/gho/database/en/),
+      [Google Public Data Explorer](https://www.google.com/publicdata/directory),
+      [Registry of Open Data on AWS](https://registry.opendata.aws/)
+      entre outros
 
 </font>
 
 
 
-## Abordagem "tradicional"
+## Na Abordagem "Tradicional"
 
-- geração das diferentes partes do conteúdo em softwares diferentes
-    - texto
-    - imagens
-    - tabelas
+- Geração das diferentes partes do conteúdo em diferentes softwares
+    - texto, >>> no Word ou Google Docs
+    - slides, >>> no PowerPoint ou no Google Slides
+    - imagens, >>> no PhotoShop ou Gimp ou similares
+    - gráficos e tabelas, >>> no Excel ou no Google Sheets
     - etc.
-- junção manual através do recurso de cópia e colagem do editor de texto
-    - geralmente no Word ou no Google Docs
+- junção manual através do recurso de cópia e colagem no editor de texto >>> ou 
+  slides
+    - <<< geralmente no Word, Google Docs, PowerPoint ou Google Slides
 
 
 
@@ -123,14 +129,14 @@ usado também
 - desvantagens
     - perda da origem das partes do conteúdo
     - perda do *como* as partes foram feitas
-    - se uma das imagens ou tabelas não for mais reconhecida internamente
-        - no Word, se não houver uma cópia em disco junto com o .doc/.docx 
-        - no Google Docs, se não houver uma cópia no Google Drive
+    - problemas 
+        - se imagens ou tabelas não forem mais reconhecida internamente e 
+        - se não houver o arquivo original para substituir o objeto
         - então já era: o grande X vermelho from hell!
 
 
 
-## Então Já Era! {.flexbox .vcenter}
+## <<< Então Já Era! {.flexbox .vcenter}
 
 O grande X vermelho from hell!
 
@@ -139,15 +145,17 @@ O grande X vermelho from hell!
 
 
 
-# Princípios, Boas Práticas e Ferramentas
+# > Princípios, Boas Práticas e Ferramentas
 
 
 
-# Princípios
+# > Princípios
 
 
 
 ## Programação Literária | *Literate Programming*
+
+<font size=4>
 
 "Um programa de computador tradicional consiste em um arquivo de texto contendo 
 o código do programa.  Espalhados no código do programa, há comentários que 
@@ -156,40 +164,45 @@ invertida. Ao invés de escrever código contendo documentação, o programador
 literário escreve documentação que contém o código." --- 
 [Ross Williams](http://www.literateprogramming.com/)
 
-- documento == mar de texto + ilhas de código
+No contexto da produção de conteúdo,
 
+- documento == mar de texto + ilhas de código
+- na verdade, você redige um *metadocumento*, parte texto e parte código, 
+  processados por programas diferentes cujas saídas são combinadas para gerar a 
+  visão final do documento
+    - metadocumento == código fonte 
+    - visão final do documento == código objeto
+    - geração da visão final == compilação
+- moral da história: não redija o documento, mas sim o metadocumento que gerará 
+  o documento
+
+</font>
 
 
 ## Reprodutibilidade de Pesquisa | *Reproducible Research*
 
-"O termo *pesquisa reproduzível* refere-se à idéia de que o produto final da 
-pesquisa acadêmica é o artigo, juntamente com os cadernos de laboratório e o 
-ambiente computacional completo usado para produzir os resultados no artigo, 
-como código, dados, etc. usado para reproduzir os resultados e criar novos 
+"O termo *pesquisa reprodutível* refere-se à idéia de que o produto final da 
+pesquisa acadêmica é o artigo juntamente com cadernos de laboratório e ambiente 
+computacional completo usados para produzir os resultados no artigo, como código, 
+dados, etc. a serem usados para reproduzir os resultados e para criar novos 
 trabalhos com base na pesquisa."
-
-- Fonte: 
+<font size=1>
+\ <<< Fonte: 
   [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research) 
   \ \ \  
   `r emo::ji("laughing")`
-- a CRAN Task View de Reprodutibilidade de Pesquisa: 
-  <https://cran.r-project.org/view=ReproducibleResearch>
+</font>
+
+Transportando para a realidade da produção de conteúdo
+
+- o produto final passa a ser o projeto inteiro que gerou o documento, incluíndo 
+  o documento final, o metadocumento, imagens, microdados etc.
+    - "documentos" autocontidos: jupyter notebooks, projetos de R Markdown com os 
+      microdados, imagens e tabelas
 
 
 
-## Reprodutibilidade de Pesquisa | *Reproducible Research*
-
-Transportando para a realidade da produção de conteúdo, o produto final passa a 
-ser a criação de projeto inteiro que gerou o documento, incluíndo texto, código, 
-imagens etc.
-
-- "documentos" autocontidos: jupyter notebooks, projetos de R Markdown com os 
-  microdados, imagens e tabelas
-- moral da história: não redija o documento, mas sim um meta-documento que gerará 
-  o documento
-
-
-# Boas práticas
+# > Boas práticas
 
 
 
@@ -208,7 +221,7 @@ imagens etc.
 
 ## "Confie à programação os processos repetitivos"
 
-- não use o *loop* copie-cole-altere-copie-cole-altere-...
+- não use o *loop* manual copie-cole-altere-copie-cole-altere-...
     - você ***vai*** errar em algum ponto
     - se você precisar refazer, vai errar em *outro* ponto, de modo que nunca 
       vai ficar igual à primeira versão
@@ -216,30 +229,32 @@ imagens etc.
 
 
 
-## "Reaproveite código que funciona"
+## "Reaproveite código que já funciona"
 
 - Um *chunk* que funciona em um documento pode ser adaptado para uma finalidade 
   próxima em outro documento
     - melhor do que começar do zero, principalmente de for um programa 
       potencialmente trabalhoso
-- não dá pra seguir essa boa prática se você não usa *chunks*, como no Word ou 
-  no Google Docs
+- essa boa prática não pode ser seguir se você não usa *chunks*, como ocorre no 
+  Word e no Google Docs
 
 
 
 ## "Use sistema de controle de versão"
 
-- "*Use sistema de controle de versão*" é o "*Use protetor solar*" dos programadores
+- É o "*Use protetor solar*" dos programadores
 - Sistema de Controle de Versão (SCV) é um sistema que registra as mudanças 
-  cumulativas de um conjunto de arquivos, de modo a seja possível encontrar o 
-  estado corrente dos arquivos em qualquer momento do desenvolvimento do projeto
-  que se deseje
-- permite rastrear a versão documento
+  cumulativas do conjunto de arquivos que compõem o projeto, de modo que seja 
+  possível encontrar o estado corrente do projeto em qualquer momento do seu 
+  desenvolvimento que se deseje
+    - Um exemplo de SVC é o [*git*](https://git-scm.com/), utilizado pelo RStudio
+- um SCV permite rastrear qualquer documento
     - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" 
       <!-- e o "*é, ninguém tá achando a versão anterior da arquivo*" -->
       ?
-    - isso não acontece se você usar um sistema de controle de versão, 
-      pois é possível dar um *rollback* pra qualquer versão de interesse
+    - isso não acontece se você usar um sistema de controle de versão, pois é 
+      possível dar um *rollback* pra qualquer versão de interesse e achar o 
+      arquivo
 
 
 
@@ -256,6 +271,8 @@ imagens etc.
 
 
 ## Sistema de Controle de Versão | O que um SCV faz?
+
+Se der tempo, eu volto neste slide
 
 - *commit* -- detecta e armazena no repositório as mudanças nos arquivos do projeto
 - *branch* -- cria ramos independentes e intercomunicáveis de edição do projeto
@@ -322,21 +339,10 @@ imagens etc.
 <!-- - tudo isso, usando *merge* quando necessários -->
 
 
-## Sistema de Controle de Versão | git `r emo::ji_glue(":heart::heart::heart::heart:")`
 
-Um exemplo de SVC é o *git*
+# > Ferramentas
 
-- <https://git-scm.com/video/what-is-version-control>
-- <https://git-scm.com/video/what-is-git>
-- <https://git-scm.com/book/en/v2>
-
-que é utilizado pelo RStudio
-
-
-
-# Ferramentas
-
-## A Linguagem de Programação *R* {.flexbox .vcenter}
+## - A Linguagem de Programação *R* {.flexbox .vcenter}
 
 ![<font size=1>I coração R exclamation mark</font>](./IheartR1.png)
 
@@ -347,15 +353,23 @@ Imagem chupinhada desavergonhadamente de
 
 
 
+## - IDE *RStudio*
+
+![<font size=1>Nossa IDE amada</font>](./rstudio2.png)
+
+
+
 ## Linguagem de Marcação *Markdown* 
 
 - Uma *linguagem de marcação* desvincula conteúdo e forma do texto
-    - você escreve o seu conteúdo sem se preocupar com formatação e precisa gerar 
-      explicitamente uma visão formatada do texto, em oposição ao Word
-- A linguagem *Markdown* permite incluir no documento texto, hiperlink, imagens, 
-  tabelas e pedaços de código (*chunks*) de várias linguagens através de uma 
-  sintaxe mais simples do que o HTML
-- Geralmente a extensão `.md` é utilizada em arquivos com texto em *Markdown*
+    - você escreve o seu conteúdo sem se preocupar com formatação
+    - é preciso precisa gerar explicitamente uma visão formatada do texto
+    - em contraste, em um editor WYSIWYG, você formata o texto à medida que 
+      escreve
+- Como sabemos, a linguagem *Markdown* permite incluir no documento texto, 
+  hiperlink, imagens, tabelas e pedaços de código (*chunks*) de várias linguagens 
+    - ou seja, programação literária
+    - e faz isso com uma sintaxe mais simples que a do HTML
 - <font size=1>*markdown* é um trocadilho com *markup*, como em 
   *hyper text markup language* (`html`)</font>
 
@@ -363,12 +377,13 @@ Imagem chupinhada desavergonhadamente de
 
 ## Formato de Arquivo *R Markdown*
 
-- Enquanto o *Markdown* é uma *linguagem de marcação*, o *R Markdown* é um 
-  formato de arquivo (cuja extensão geralmente é `.rmd` ou `.Rmd`) baseada em 
-  Markdown que contém três tipos de conteúdo:
-    - metadados sobre o documento, em formato [YAML](https://yaml.org/)
-    - texto, em formato Markdown, o que permite incluir hiperlink, imagem e tabela
-    - código, encapsulados dentro de *chunks*
+Enquanto o *Markdown* é uma *linguagem de marcação*, o *R Markdown* é um 
+formato de arquivo (`.rmd` ou `.Rmd`) baseado no *Markdown* que contém três 
+tipos de conteúdo usados na geração da visão final do documento:
+
+  - metadados sobre o documento, >>> em formato [YAML](https://yaml.org/)
+  - texto, em formato Markdown, >>> incluíndo hiperlink, imagem e tabela
+  - código, encapsulados dentro de *chunks*
 
 
 
@@ -377,16 +392,11 @@ Imagem chupinhada desavergonhadamente de
 O aplicativo *Pandoc* 
 
 - é um conversor entre diversas linguagens de marcação,
-- implementa programação literária
-- processa a linguagem *Markdown* e o formato *R Markdown*
+    - processa a linguagem *Markdown* e o formato *R Markdown*
+- é quem implementa programação literária
+    - renderização
 - consegue gerar saídas em `.pdf` (texto ou *slides*), `.html` (texto, *slides* 
-  ou *dashboard*), `.ppt`/`.pptx`, `.doc`/`.docx` entre outros
-
-
-
-## Ambiente de Desenvolvimento Integrado (IDE) *RStudio*
-
-![<font size=1>Nossa IDE amada</font>](rstudio2.png)
+  ou *dashboard*), >>> `.ppt`/`.pptx`, `.doc`/`.docx` entre muitos outros
 
 
 
@@ -395,13 +405,13 @@ O aplicativo *Pandoc*
 - É um conjunto de 
     - um protocolo de troca de informação entre programas
     - programas que ficam rodando de acordo com esse protocolo, quer para 
-      realizar solicitações, quer para atender às solicitações
+      realizar solicitações, quer para atender a essas solicitações
 - essa troca de informação pode ser interna a uma máquina, interna a uma intranet 
   ou na internet
 - é uma forma de integrar sistemas através de troca de informação textual
 - pode ser usado para atividades tão diversas quanto obter as mensagens do 
-  R Brasil no Telegram, executar uma transferência bancária e ativar os sensores 
-  de movimento de uma sala
+  *R Brasil* no *Telegram*, executar uma transferência bancária e ativar os sensores 
+  de movimento em uma sala
 - as páginas de internet dinâmicas são, essencialmente, o resultado de uma 
   transação por API
     - <font size=1>mas há outras possibilidades de retorno além de páginas em HTML, 
@@ -411,10 +421,12 @@ O aplicativo *Pandoc*
 
 ## Sistema JupiterWeb 
 
-Usaremos o JupiterWeb para gerar páginas dinâmicas via API em um exemplo adiante, 
-mas agora sua URL será usada para ilustrar a estrutura da URL de uma requisição API
+<<<Se der tempo, voltarei neste slide>>>
 
 <font size=4>
+
+Usarei, mais adiante, a *API* do JupiterWeb para gerar uma página dinâmica para um 
+exemplo, mas agora usarei sua URL para ilustrar a estrutura de uma requisição API
 
 - `https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=ACH0021`
     - `https://uspdigital.usp.br/` 
@@ -434,7 +446,7 @@ mas agora sua URL será usada para ilustrar a estrutura da URL de uma requisiç�
 
 
 
-# Exemplo
+# > Exemplo
 
 ## Exemplo
 
@@ -442,52 +454,52 @@ Eu preciso criar um texto que incluirá uma tabela com disciplinas referentes a
 um curso de bacharelado (que preciso pegar no JupiterWeb de uma página apropriada) 
 e acrescentar informação sobre diponibilidade para elas
 
-Pelo método "tradicional"
-
-- eu acessaria interativamente no navegador a página com a tabela
-- copiaria no navegador e colaria no Excel ou Word na ponta do mouse
-- editaria manualmente
+![A página HTML no JupiterWeb e a tabela de disciplinas a ser incluída no texto](./jupiter2.png)
 
 
 
-## Exemplo
+## Método "tradicional"
 
-![A página HTML no JupiterWeb e a tabela de disciplinas a ser incluída no texto](./jupiter1.png)
+- Eu redigiria meu conteúdo no Word
+- acessaria interativamente no navegador a página com a tabela
+- copiaria do navegador a tabela bruta e colaria no Excel na ponta do mouse
+- editaria manualmente a tabela até chegar numa versão polida da tabela
+- copiaria do Excel a tabela polida e colaria no meu texto no Word
 
 
 
-## Exemplo
+## "*This is how we do it*"
 
-Por outro lado, eu posso criar um documento R Markdown que contenha três *chunks*
+Por outro lado, eu posso criar um documento R Markdown com meu conteúdo e incluir 
+três *chunks*, a serem executados em momentos diferentes
 
 <font size=4>
 
-- *chunk* 1
+- *chunk* 1 --- a ser rodado uma única vez, fora da renderização e para iniciar tudo 
     - obtenha a página HTML de disciplinas do curso de interesse no Jupiter via API
     - raspe a tabela de disciplinas dentro da página obtida
-    - elimine as linhas com de pré-requisitos
-    - deixe só as colunas sigla e nome da disciplina
-    - adicione colunas de disponibiliade
+    - elimine as linhas e colunas que não interessam
+    - adicione colunas de disponibiliade (para serem preenchidas manualmente)
     - crie uma planilha no Google Sheets com esses dados
-- *chunk* 2
+- *chunk* 2 --- pode rodar quando quiser, mas fora da renderização
     - abra essa planilha no navegador para preenchimento manual
-- *chunk* 3
-    - traga essa planilha de volta
+- *chunk* 3 --- rodado a cada vez que renderizar
+    - puxe os dados dessa planilha do Google Sheets
     - formate bonitinho como tabela e imprima
 
 </font>
 
 
 
-## Exemplo 
+## *Chunk* 1 --- parte 1/2
 
-*Chunk* 1 -- Parte 1
-
-<font size=4>
-
-```
+<pre><code>```{r edita, comment="", strip.white=TRUE, eval=FALSE}
 lista_disciplinas <- 
-  "https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=55&codcur=55070&codhab=4&tipo=N" %>% 
+  paste(
+    "https://uspdigital.usp.br/jupiterweb/listarGradeCurricular",
+    "?codcg=55&codcur=55070&codhab=4&tipo=N",
+    collapse = ""
+  ) %>% 
   xml2::read_html() %>%
   rvest::html_nodes("table") %>% 
   magrittr::extract(2) %>% 
@@ -495,24 +507,15 @@ lista_disciplinas <-
   magrittr::extract2(1) %>%
   dplyr::select(1:2) %>% 
   dplyr::filter(stringr::str_detect(X1, "^SME[0-9]{4}$")) %>%
-  dplyr::transmute(
-    "Topo" = c(NA),
-    "Gosto" = c(NA),
+  dplyr::transmute("Topo" = c(NA), "Gosto" = c(NA),
     disciplina = stringr::str_c(X1, X2, sep = " - ")
-  ) 
-```
-
-</font>
+  )
+</code></pre>
 
 
+## *Chunk* 1 --- parte 2/2
 
-## Exemplo 
-
-*Chunk* 1 -- Parte 2
-
-<font size=4>
-
-```
+<pre><code>
 googlesheets::gs_auth()
 tryCatch(
   {planilha <- googlesheets::gs_title("discip")},
@@ -526,63 +529,71 @@ tryCatch(
       stringr::str_remove_all('"')
   }
 )
-```
-
-</font>
-
+<pre><code>```</code></pre>
+</code></pre>
 
 
-## Exemplo 
+
+## *Chunks* 2 e 3
 
 *Chunk* 2
 
-```
-googlesheets::gs_browse(planilha)
-```
+<pre><code>```{r browse, comment="", strip.white=TRUE, eval=FALSE}
+googlesheets::gs_browse(planilha) 
+<pre><code>```</code></pre>
+</code></pre>
 
 *Chunk* 3
 
-```
+<pre><code>```{r imprime, comment="", strip.white=TRUE}
 googlesheets::gs_auth()
 googlesheets::gs_title("discip") %>%
   googlesheets::gs_read() %>%
   kableExtra::kable()
-```
+<pre><code>```</code></pre>
+</code></pre>
 
 
 
-## Exemplo | Resultado
 
-![](./resultado1.png)
+## - Resultado
 
-
-
-## Exemplo | Potencialidades a Explorar
-
-- 
-- "Reaproveite código que funciona" + interface API: se eu tivesse um vetor de 
-códigos de curso, seria possível gerar uma sequência de tabelas adaptando um 
-*loop* no código original
-
-<font size=6> AQUI </font>
-
----
-
-acessíveis via API
-
-- técnicas de coleta/raspagem/requisição de dados
-    - uso de API pra pedir e obter dados em forma JSON ou XML
-        - packages 
-    - uso de pacotes que encapsulam o cpodigo API
-- interface com sistemas cloud
-    - até tem o sistema de API, mas alguns packages encapsulam a sintaxe,pra 
-      facilitar a vida
+![A tabela final já dentro do documento](./resultado1.png)
 
 
 
-# Muito Obrigado!
+## Potenciais Exemplos de Aplicação
 
-Repositório desta apresentação
+Se eu tivesse um vetor de códigos dos curso de graduação para os quais eu teria 
+de fazer o mesmo processo, seria possível gerar uma sequência de tabelas 
+adaptando um *loop* no código original
+
+- "Confie à programação os processos repetitivos" 
+- "Reaproveite código que já funciona" 
+- interface API
+
+
+
+## Potenciais Exemplos de Aplicação
+
+Posso chupinhar a
+[análise das mensagens do grupo `R Brasil` no Telegram](https://www.curso-r.com/blog/2019-09-10-rbrasil/) 
+que o Júlio Trecenti fez no [Blog Curso-R](https://www.curso-r.com/) e usá-la 
+como base inicial para realizar outras análises ou mesmo para reaplicar a mesma 
+análise em dados atualizados
+
+- Reprodutibilidade de pesquisa
+- "Código é documentação"
+    - <<< Julio usou alguma API? Leia o código, que você descobre
+    - <<< Quais critérios de busca Júlio usou para localizar os *nodes* com as 
+      datas e horas? Leia o código, que você descobre
+- "Reaproveite código que já funciona"
+
+
+
+# > Muito Obrigado!
+
+Repositório desta apresentação:
 
 <https://github.com/zyxdef/DoctoReprodutRMarkdown>
 
