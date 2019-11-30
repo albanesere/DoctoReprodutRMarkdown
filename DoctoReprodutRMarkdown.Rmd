@@ -235,7 +235,7 @@ Transportando para a realidade da produção de conteúdo
   próxima em outro documento
     - melhor do que começar do zero, principalmente de for um programa 
       potencialmente trabalhoso
-- essa boa prática não pode ser seguir se você não usa *chunks*, como ocorre no 
+- essa boa prática não pode ser seguida se você não usa *chunks*, como ocorre no 
   Word e no Google Docs
 
 
@@ -244,18 +244,18 @@ Transportando para a realidade da produção de conteúdo
 
 - É o "*Use protetor solar*" dos programadores
 - Sistema de Controle de Versão (SCV) é um sistema que registra as mudanças 
-  cumulativas do conjunto de arquivos que compõem o projeto, de modo que seja 
-  possível encontrar o estado corrente do projeto em qualquer momento do seu 
+  cumulativas dos arquivos que compõem o projeto, de modo que seja possível 
+  encontrar o estado corrente do projeto em qualquer momento do seu 
   desenvolvimento que se deseje
     - Um exemplo de SVC é o [*git*](https://git-scm.com/), utilizado pelo RStudio
 - um SCV permite rastrear qualquer documento
     - sabe o "*putz, não podiam ter jogado fora aquele gráfico*" 
       <!-- e o "*é, ninguém tá achando a versão anterior da arquivo*" -->
       ?
-    - isso não acontece se você usar um sistema de controle de versão, pois é 
-      possível dar um *rollback* pra qualquer versão de interesse e achar o 
-      arquivo
-
+    - isso não acontece se você usar um SCV, pois é possível dar um *rollback* 
+      para qualquer etapa do desenvolvimento do projeto e achar o arquivo
+- um SCV distribuido permite compartilhar o desenvolvimento de um projeto com uma 
+  equipe, rastreando quem fez o quê com o quê de quem
 
 
 <!-- ## Sistema de Controle de Versão | Partes de um SCV -->
